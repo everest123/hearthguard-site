@@ -71,7 +71,7 @@
 <div class="hero"><div class="wrap">
   <div>
     <h1>Your AI team, on your infrastructure.</h1>
-    <p class="lead">HearthGuard Agent Hub is a self-hosted platform for teams of AI agents. Each agent has a defined role, durable memory, scoped tools and an auditable permission policy. Agents collaborate, delegate, and run on the model best suited to the task, from Claude and GPT to a model on your own GPU. Conversations, memory and records stay on hardware you control.</p>
+    <p class="lead">HearthGuard Agent Hub is a self-hosted platform for teams of AI agents. Each agent has a defined role, durable memory, scoped tools and an auditable permission policy. Agents collaborate, delegate, and run on the model best suited to the task, from Claude and GPT to a model on your own GPU. The hub, its memory and its records are stored on hardware you control. Hosted models receive the prompt and context of each turn they handle; local models keep everything on your machine.</p>
     <a class="cta" href="#demo">See how it works</a><a class="cta alt" href="#contact">Get in touch</a>
     <div class="pills"><span class="pill">Self-hosted</span><span class="pill">Claude · OpenAI · Gemini · Perplexity · local models</span><span class="pill">Desktop and mobile</span><span class="pill">Multi-user with 2FA</span><span class="pill">Free for personal use</span></div>
   </div>
@@ -150,11 +150,11 @@
 <section id="privacy" class="divider"><div class="wrap two">
   <div>
     <h2>Security and data residency</h2>
-    <p class="sub">Conversations, memory and records remain on your infrastructure. Hosted model providers receive only the context sent for a given turn; local models send nothing externally.</p>
+    <p class="sub">Storage is yours: conversations, memory and records live on your infrastructure. Processing depends on the model you choose. A hosted provider receives the prompt and context of every turn it handles, under its own data terms. A local model sends nothing off the machine. Each agent can be pinned to one or the other.</p>
     <ul class="check">
       <li>Binds to localhost by default. Network exposure is an explicit configuration step behind authentication and two-factor.</li>
       <li>Wallet keys and connector credentials are encrypted at rest. Passphrase-protected credentials are unlocked on demand and re-lock automatically after an idle period.</li>
-      <li>Agents handling medical or legal matters can be restricted from hosted classifiers and routed to local models.</li>
+      <li>Agents handling sensitive matters can be pinned to local models, and kept away from hosted classifiers, so nothing about them leaves the machine.</li>
       <li>All state is plain files and a single SQLite database, suitable for standard backup tooling.</li>
     </ul>
   </div>
