@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hearthguard — Self-hosted platform for AI agent teams</title>
+<meta name="description" content="Hearthguard is a self-hosted platform for running teams of AI agents with durable memory, delegation, scoped tools and auditable permissions, on your own infrastructure.">
+<link rel="icon" href="hub-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#1a1a19; --bg2:#22221f; --panel:#262623; --line:#36362f; --text:#ffffff; --dim:#c3c2b7; --blue:#3987e5; --blue-l:#83b9ff; --orange:#d95926; --aqua:#199e70; --violet:#8b6fd6; --gold:#c9a227; --rose:#d4588b; }
+  * { box-sizing:border-box }
+  html { scroll-behavior:smooth } @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto } *, *::before, *::after { animation:none !important; transition:none !important } }
+  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.6 Inter, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  a { color:var(--blue-l); text-decoration:none } a:hover { text-decoration:underline } a:focus-visible, button:focus-visible { outline:3px solid var(--gold); outline-offset:4px }
+  h1, h2 { font-family:"Instrument Serif", Georgia, "Times New Roman", serif; font-weight:400; letter-spacing:0 }
+  .wrap { max-width:1100px; margin:0 auto; padding:0 24px }
+  section { padding:96px 0; scroll-margin-top:76px }
+  header { position:sticky; top:0; background:rgba(26,26,25,.88); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); z-index:5 }
+  header .wrap { display:flex; align-items:center; justify-content:space-between; height:62px }
+  .brand { display:flex; align-items:center; gap:10px; font-weight:600; color:var(--text) } .brand img { width:28px; height:28px; border-radius:7px }
+  nav a { color:var(--dim); margin-left:24px; font-size:14px } nav a:hover { color:var(--text); text-decoration:none }
+
+  .hero { padding:120px 0 88px; background:radial-gradient(900px 420px at 18% -10%, rgba(57,135,229,.14), transparent 60%), radial-gradient(700px 360px at 92% 10%, rgba(25,158,112,.08), transparent 60%) }
+  .hero .wrap { display:grid; grid-template-columns:1.15fr .85fr; gap:48px; align-items:center }
+  .hero h1 { font-size:clamp(2.6rem, 5.4vw, 4.2rem); line-height:1.05; margin:0 0 20px; max-width:19ch; text-wrap:balance }
+  .hero p.lead { font-size:18px; color:var(--dim); max-width:58ch; line-height:1.65; margin:0 0 30px }
+  .cta { display:inline-block; background:var(--blue-l); color:#101a28; padding:12px 20px; border-radius:8px; font-weight:600 } .cta:hover { text-decoration:none; filter:brightness(1.06) }
+  .cta.alt { background:transparent; border:1px solid var(--line); color:var(--text); margin-left:10px }
+  .pills { margin-top:34px; display:flex; flex-wrap:wrap; gap:8px }
+  .pill { font-size:13px; color:var(--dim); border:1px solid var(--line); border-radius:999px; padding:5px 12px; background:var(--bg2) }
+  .graph { width:100%; height:auto; display:block } .graph .pulse { animation:pulse 3.2s ease-in-out infinite } .graph .p2 { animation-delay:1.1s } .graph .p3 { animation-delay:2.2s }
+  @keyframes pulse { 0%,100% { opacity:.25 } 50% { opacity:.7 } }
+
+  h2 { font-size:38px; margin:0 0 10px } .sub { color:var(--dim); margin:0 0 40px; max-width:62ch; font-size:17px }
+  .demo { background:linear-gradient(145deg, #2d2e2a, #1f201d); border:1px solid var(--line); border-radius:18px; padding:26px; box-shadow:0 24px 64px #0006 }
+  .demo .lbl { font-size:12px; color:var(--dim); letter-spacing:.08em; text-transform:uppercase; margin-bottom:14px }
+  .msg { max-width:88%; padding:10px 14px; border-radius:12px; margin:8px 0; font-size:15px; line-height:1.55 }
+  .msg.me { background:var(--blue); color:#fff; margin-left:auto; border-bottom-right-radius:4px }
+  .msg.ag { background:var(--panel); border:1px solid var(--line); border-bottom-left-radius:4px }
+  .msg .who { display:block; font-size:12px; color:var(--dim); margin-bottom:4px } .msg.me .who { color:#dbe9ff }
+  .msg .n { color:var(--gold) } .msg .worker { display:inline-block; font-size:12px; color:var(--aqua); border:1px solid var(--line); border-radius:999px; padding:1px 8px; margin:2px 4px 0 0 }
+  .two { display:grid; grid-template-columns:1.1fr .9fr; gap:40px; align-items:center }
+  ul.check { list-style:none; padding:0; margin:0 } ul.check li { padding:8px 0 8px 28px; position:relative; color:var(--dim) } ul.check li::before { content:"✓"; color:var(--aqua); position:absolute; left:4px; font-weight:700 }
+
+  .group { margin-top:44px } .group h3 { margin:0 0 14px; font-size:14px; letter-spacing:.1em; text-transform:uppercase; color:var(--dim) } .group h3 span { display:inline-block; width:10px; height:10px; border-radius:3px; margin-right:10px; vertical-align:middle; background:var(--c) }
+  .grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:20px }
+  .card { position:relative; overflow:hidden; background:linear-gradient(180deg, #282825, #232321); border:1px solid var(--line); border-radius:12px; padding:24px 24px 26px; transition:transform .15s, border-color .15s }
+  .card::before { content:""; position:absolute; inset:0 0 auto 0; height:3px; background:var(--c) }
+  .card:hover { border-color:color-mix(in srgb, var(--c) 45%, var(--line)); transform:translateY(-2px) }
+  .card h4 { margin:0 0 8px; font-size:17px; font-weight:600 } .card p { margin:0; color:var(--dim); font-size:15px }
+
+  .steps { display:grid; grid-template-columns:repeat(4, 1fr); gap:20px; counter-reset:s }
+  .step { background:var(--bg2); border:1px solid var(--line); border-radius:12px; padding:22px 20px 20px; position:relative }
+  .step::before { counter-increment:s; content:counter(s); position:absolute; top:-12px; left:16px; background:var(--c); color:#fff; font-weight:600; font-size:13px; width:24px; height:24px; border-radius:12px; display:flex; align-items:center; justify-content:center }
+  .step h4 { margin:6px 0 6px; font-size:16px; font-weight:600 } .step p { margin:0; color:var(--dim); font-size:14px } code { font-size:13px; background:var(--panel); padding:1px 5px; border-radius:4px }
+  .providers { display:flex; flex-wrap:wrap; gap:10px; margin-top:12px } .providers span { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:8px 14px; font-size:14px }
+  .divider { border-top:1px solid var(--line) }
+  footer { padding:36px 0 48px; color:var(--dim); font-size:14px } footer .wrap { display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px }
+  @media (max-width:900px) { .hero .wrap, .two { grid-template-columns:1fr } .hero svg { display:none } .grid, .steps { grid-template-columns:1fr 1fr } nav { display:none } h2 { font-size:32px } }
+  @media (max-width:560px) { .grid, .steps { grid-template-columns:1fr } }
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="brand" href="#"><img src="hub-192.png" alt="">Hearthguard</a>
+  <nav><a href="#demo">Product</a><a href="#features">Capabilities</a><a href="#how">Deployment</a><a href="#privacy">Security</a><a href="#contact">Contact</a></nav>
+</div></header>
+
+<div class="hero"><div class="wrap">
+  <div>
+    <h1>Your AI team, on your infrastructure.</h1>
+    <p class="lead">Hearthguard is a self-hosted platform for teams of AI agents. Each agent has a defined role, durable memory, scoped tools and an auditable permission policy. Agents collaborate, delegate, and run on the model best suited to the task, from Claude and GPT to a model on your own GPU. Conversations, memory and records stay on hardware you control.</p>
+    <a class="cta" href="#demo">See how it works</a><a class="cta alt" href="#contact">Get in touch</a>
+    <div class="pills"><span class="pill">Self-hosted</span><span class="pill">Claude · OpenAI · Gemini · Perplexity · local models</span><span class="pill">Desktop and mobile</span><span class="pill">Multi-user with 2FA</span><span class="pill">Free for personal use</span></div>
+  </div>
+  <svg class="graph" viewBox="0 0 420 320" role="img" aria-label="One person at the centre, agents around them, workers spawned by an agent">
+    <defs><filter id="g"><feGaussianBlur stdDeviation="7"/></filter></defs>
+    <g stroke="#36362f" stroke-width="1.5" fill="none">
+      <path d="M210 160 L90 70 M210 160 L330 70 M210 160 L70 230 M210 160 L350 230 M210 160 L210 290"/>
+      <path d="M330 70 L395 40 M330 70 L395 100" stroke-dasharray="4 4"/>
+    </g>
+    <circle class="pulse" cx="210" cy="160" r="34" fill="#3987e5" filter="url(#g)"/>
+    <circle cx="210" cy="160" r="22" fill="#3987e5"/>
+    <circle class="pulse p2" cx="330" cy="70" r="22" fill="#199e70" filter="url(#g)" opacity=".3"/>
+    <circle cx="90" cy="70" r="14" fill="#d95926"/><circle cx="330" cy="70" r="14" fill="#199e70"/>
+    <circle cx="70" cy="230" r="14" fill="#8b6fd6"/><circle cx="350" cy="230" r="14" fill="#c9a227"/>
+    <circle cx="210" cy="290" r="14" fill="#d4588b"/>
+    <circle class="pulse p3" cx="395" cy="40" r="6" fill="#199e70"/><circle class="pulse p3" cx="395" cy="100" r="6" fill="#199e70"/>
+    <g font-family="Inter, sans-serif" font-size="11" fill="#c3c2b7" text-anchor="middle">
+      <text x="210" y="205">you</text><text x="90" y="98">research</text><text x="330" y="98">project lead</text>
+      <text x="70" y="258">health</text><text x="350" y="258">house</text><text x="210" y="318">finance</text>
+      <text x="395" y="122" font-size="10">workers</text>
+    </g>
+  </svg>
+</div></div>
+
+<section id="demo"><div class="wrap two">
+  <div>
+    <h2>Work goes to the right agent, with its history intact.</h2>
+    <p class="sub">An agent that owns a domain answers from its own records, brings in specialist workers for the parts it should not guess at, and holds any outbound action until it is approved. Every fact it cites can be traced to a note, a document or a tool result.</p>
+    <ul class="check">
+      <li>Durable memory per agent: long-term notes, daily session notes, records loaded in full on every turn, and full-text search over the complete transcript archive.</li>
+      <li>Delegation is native. An agent consults a named colleague or spawns parallel workers, selecting a model for each one.</li>
+      <li>Available on desktop and as a mobile app, with push notifications when an agent completes a task or needs a decision.</li>
+    </ul>
+  </div>
+  <div class="demo">
+    <div class="lbl">Example conversation</div>
+    <div class="msg me"><span class="who">You · 8:40 am</span>The furnace is short-cycling again. What did we do last winter, and who do we call?</div>
+    <div class="msg ag"><span class="who">House · 8:40 am</span>Last November it was the flame sensor; Pat from Hearth Mechanical cleaned it on the <span class="n">14th</span>, invoice <span class="n">$145</span>, in your Records. Same symptom, so I'd start there. I've asked two workers to check the current options while I look for the filter date.<br><span class="worker">worker · pricing · fast model</span><span class="worker">worker · parts · local model</span></div>
+    <div class="msg ag"><span class="who">House · 8:42 am</span>Filter was changed <span class="n">9 weeks</span> ago, so that's not it. A replacement sensor is about <span class="n">$22</span> and Pat's earliest slot is Thursday. Want me to draft the message to Pat? I won't send it until you say so.</div>
+  </div>
+</div></section>
+
+<section id="features" class="divider"><div class="wrap">
+  <h2>Capabilities</h2>
+  <p class="sub">Everything an agent needs to hold a role over months, not minutes.</p>
+  <div class="group" style="--c:var(--blue)"><h3><span></span>Memory</h3><div class="grid">
+    <div class="card" style="--c:var(--blue)"><h4>Defined identities</h4><p>An agent's role, voice and user context are plain Markdown files under version control. Edit the file and the agent changes on its next turn.</p></div>
+    <div class="card" style="--c:var(--blue)"><h4>Durable memory</h4><p>Long-term memory, session notes and a shared knowledge pool, backed by SQLite. The full transcript archive is indexed for search, so an agent can recall a detail from weeks ago with a citation.</p></div>
+    <div class="card" style="--c:var(--blue)"><h4>Agent-authored context compression</h4><p>As a context window fills, the agent writes its own carry-forward brief and continues in a fresh session with that brief, the recent turns verbatim, and search over the rest. No provider-side summarisation.</p></div>
+  </div></div>
+  <div class="group" style="--c:var(--aqua)"><h3><span></span>Collaboration</h3><div class="grid">
+    <div class="card" style="--c:var(--aqua)"><h4>Delegation and parallel workers</h4><p>Agents consult named colleagues or spawn ephemeral workers in parallel, each on the model chosen for the job. Deep reasoning on a frontier model, bulk work on a fast one, sensitive text on a local one. Worker activity is visible in real time.</p></div>
+    <div class="card" style="--c:var(--aqua)"><h4>Multi-provider routing</h4><p>Anthropic Claude, including Pro and Max subscriptions, OpenAI, Google Gemini, Perplexity, and local models via LM Studio, Ollama or a GPU inference server. Optional per-prompt model selection, and automatic fallback when a subscription reaches its limit.</p></div>
+    <div class="card" style="--c:var(--aqua)"><h4>Tools, jobs and schedules</h4><p>Shell, files, web, email and image generation. Charts and diagrams render in the conversation. Long-running jobs execute detached and report on completion. Scheduled tasks wake an agent on a cron or calendar.</p></div>
+  </div></div>
+  <div class="group" style="--c:var(--orange)"><h3><span></span>Governance</h3><div class="grid">
+    <div class="card" style="--c:var(--orange)"><h4>Auditable permissions</h4><p>Every tool call is classified as a read, write, send, admin or destructive action and checked against a per-agent policy. Workers cannot write outside their workspace. Financial tools are restricted to a single designated agent. Approval cards are available for actions that should wait for a person.</p></div>
+    <div class="card" style="--c:var(--orange)"><h4>Data connectors</h4><p>Connect external systems, from a patient portal to any MCP server. Each connector is granted to specific agents, protected by a passphrase per service or per group, and stores its data in a folder governed by its own policy.</p></div>
+    <div class="card" style="--c:var(--orange)"><h4>Multi-user and cost visibility</h4><p>Administrators and members with two-factor authentication, invitations, and isolated agents and files per member. A ledger records the cost of every turn; subscription usage is monitored live. Updates install from within the application.</p></div>
+  </div></div>
+</div></section>
+
+<section id="how" class="divider"><div class="wrap">
+  <h2>Deployment</h2>
+  <p class="sub">A single Node.js service with no external database. State is SQLite and plain files, straightforward to back up and inspect.</p>
+  <div class="steps">
+    <div class="step" style="--c:var(--blue)"><h4>Install</h4><p>Clone the repository, run <code>npm install</code>, start the service. A setup page configures providers. Runs under systemd or launchd; pairs with a private network such as Tailscale for mobile access.</p></div>
+    <div class="step" style="--c:var(--aqua)"><h4>Define agents</h4><p>Name, model and a description of the role. Hearthguard generates the identity files, which you refine over time.</p></div>
+    <div class="step" style="--c:var(--violet)"><h4>Connect systems</h4><p>Enable skills and data connectors, and grant each to the agents that need it. Least privilege is the default.</p></div>
+    <div class="step" style="--c:var(--orange)"><h4>Operate</h4><p>Work with agents from desktop or mobile. They retain context across sessions, delegate, run jobs, and request decisions when policy requires one.</p></div>
+  </div>
+  <p class="sub" style="margin:44px 0 0">Supported providers and integrations</p>
+  <div class="providers"><span>Anthropic Claude</span><span>OpenAI</span><span>Google Gemini</span><span>Perplexity</span><span>Codex CLI</span><span>LM Studio</span><span>Ollama</span><span>NInfer, local GPU</span><span>MCP servers</span><span>Google Workspace</span><span>GitHub</span></div>
+</div></section>
+
+<section id="privacy" class="divider"><div class="wrap two">
+  <div>
+    <h2>Security and data residency</h2>
+    <p class="sub">Conversations, memory and records remain on your infrastructure. Hosted model providers receive only the context sent for a given turn; local models send nothing externally.</p>
+    <ul class="check">
+      <li>Binds to localhost by default. Network exposure is an explicit configuration step behind authentication and two-factor.</li>
+      <li>Wallet keys and connector credentials are encrypted at rest. Passphrase-protected credentials are unlocked on demand and re-lock automatically after an idle period.</li>
+      <li>Agents handling medical or legal matters can be restricted from hosted classifiers and routed to local models.</li>
+      <li>All state is plain files and a single SQLite database, suitable for standard backup tooling.</li>
+    </ul>
+  </div>
+  <div class="card" style="--c:var(--gold)">
+    <h4>Licensing</h4>
+    <p>Hearthguard is source-available under the PolyForm Noncommercial license. Personal, research and self-hosted non-commercial use is free. Commercial deployment, including use on behalf of clients, is available under a separate commercial license.</p>
+    <p style="margin-top:14px"><a href="#contact">Enquire about commercial licensing</a></p>
+  </div>
+</div></section>
+
+<section id="contact" class="divider"><div class="wrap">
+  <h2>Contact</h2>
+  <p class="sub">Hearthguard is developed by Jeff Lunglhofer. For questions, commercial licensing, or integration requests:</p>
+  <p><a class="cta" href="mailto:jeff@lunglhofer.com">jeff@lunglhofer.com</a></p>
+</div></section>
+
+<footer class="divider"><div class="wrap">
+  <div>© 2026 Jeff Lunglhofer · Hearthguard</div>
+  <div><a href="#privacy">Privacy</a> · <a href="#privacy">License</a> · <a href="#contact">Contact</a></div>
+</div></footer>
+</body>
+</html>
