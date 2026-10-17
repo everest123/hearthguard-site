@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Security · My Maestro AI</title>
+<meta name="description" content="My Maestro AI keeps your agents' memories on your own machine, checks every action against your policy, contains agents in sandboxes, and reviews its own security every night.">
+<link rel="icon" href="/hub-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header><div class="wrap">
+  <a class="brand" href="/"><img src="/hub-192.png" alt="">My Maestro AI</a>
+  <nav aria-label="Main"><a href="/agents/">Agents</a><a href="/platform/">Platform</a><a href="/security/" aria-current="page">Security</a><a class="nav-cta" href="/start/">Get started</a></nav>
+</div></header>
+
+<div class="page-hero"><div class="wrap">
+  <p class="eyebrow">Security</p>
+  <h1>Powerful agents. Firm boundaries.</h1>
+  <p class="lead">Your agents do real work on real systems. My Maestro AI makes sure they do only the work you allow, on hardware you own, and tells you the moment anything needs attention.</p>
+  <div class="index">
+    <a href="#data" style="--c:var(--aqua)">Your data</a><a href="#actions" style="--c:var(--orange)">Every action checked</a><a href="#contained" style="--c:var(--violet)">Contained</a><a href="#watch" style="--c:var(--gold)">Self-checking</a><a href="#license" style="--c:var(--blue)">License</a>
+  </div>
+</div></div>
+
+<div class="wrap">
+  <div class="group" id="data" style="--c:var(--aqua)"><h2><span></span>Your data stays home</h2>
+    <div class="two even">
+      <p class="gintro">Conversations, memories, records and files live on your own machine, in plain files and SQLite you can read and back up yourself. Processing follows the model you choose: a hosted model sees the turns it handles, under its provider's terms, and a local model sends nothing off the machine. Agents that handle sensitive matters can be kept on local models.</p>
+      <ul class="check">
+        <li>Listens only on the machine itself until you decide otherwise, and opening it to a network requires an administrator with two-factor authentication.</li>
+        <li>Wallet keys and connector credentials are encrypted at rest and lock again after a period of inactivity.</li>
+        <li>No telemetry. Updates happen when you press the button, from the channel you choose.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="group" id="actions" style="--c:var(--orange)"><h2><span></span>Every action checked</h2>
+    <p class="gintro">Agents act through tools, and every tool call passes a policy you set before it runs.</p>
+    <div class="grid g4">
+      <div class="card" style="--c:var(--orange)"><h4>A policy gate on every action</h4><p>Each tool call is classified as a read, a write, a send, an administrative, destructive or money action, and checked against the agent's role and your overrides. One switch halts every agent at once.</p></div>
+      <div class="card" style="--c:var(--orange)"><h4>Approval when you want it</h4><p>Choose which kinds of action always wait for you, such as anything destructive or anything that spends money, and approve them from a card on your desktop or phone.</p></div>
+      <div class="card" style="--c:var(--orange)"><h4>Root, by your hand only</h4><p>Administrator rights on the machine belong to the lead agent alone. You can lend another agent root for a set time, and every root command is logged.</p></div>
+      <div class="card" style="--c:var(--orange)"><h4>Money behind a firewall</h4><p>Trading wallets sign only within the limits and the address book you set, and exchange modules check every order against your caps before it goes out.</p></div>
+    </div>
+  </div>
+
+  <div class="group" id="contained" style="--c:var(--violet)"><h2><span></span>Contained by design</h2>
+    <p class="gintro">Each agent sees what it needs, and nothing more.</p>
+    <div class="grid g4">
+      <div class="card" style="--c:var(--violet)"><h4>Sandboxed agents</h4><p>An agent's shell and files can run inside its own container, which sees only its workspace and the folders you grant. Sign-in credentials can stay outside the container entirely.</p></div>
+      <div class="card" style="--c:var(--violet)"><h4>Private family members</h4><p>Members' agents run in containers and cannot reach another member's agents or files. Members get only the permissions you grant them.</p></div>
+      <div class="card" style="--c:var(--violet)"><h4>Scoped tokens for scripts</h4><p>A script gets a token for exactly what it needs, usable only from the hub's own machine unless you allow more, with an expiry date and one-click revoke.</p></div>
+      <div class="card" style="--c:var(--violet)"><h4>Two-factor sign-in</h4><p>Accounts sign in with a password and an authenticator code, and the security check flags any account that has not set it up.</p></div>
+    </div>
+  </div>
+
+  <div class="group" id="watch" style="--c:var(--gold)"><h2><span></span>It watches itself</h2>
+    <p class="gintro">Security is not a setting you choose once. The hub checks itself every day.</p>
+    <div class="grid g2">
+      <div class="card" style="--c:var(--gold)"><h4>A nightly security check</h4><p>Every night the hub reviews its accounts and two-factor, network exposure, file permissions, agent permissions, tokens and open services, and tells you exactly what to fix. It runs from a terminal too, even when the hub is down.</p></div>
+      <div class="card" style="--c:var(--gold)"><h4>A record of everything</h4><p>Every turn is kept in the transcript, every root command and permission change is logged, and every turn is costed in the ledger. You can always see who did what, and when.</p></div>
+    </div>
+  </div>
+
+  <div class="group" id="license" style="--c:var(--blue)"><h2><span></span>License</h2>
+    <div class="card" style="--c:var(--blue)">
+      <p>My Maestro AI is source-available under the PolyForm Noncommercial license. Personal, research and self-hosted non-commercial use is free. Commercial deployment, including use on behalf of clients, is available under a separate commercial license. <a href="mailto:jeff@lunglhofer.com">Ask about commercial licensing</a>.</p>
+    </div>
+  </div>
+
+  <div class="next"><div><strong>Ready to build your team?</strong><p>One computer and an AI provider of your choice is all it takes.</p></div><a class="cta" href="/start/">Get started</a></div>
+</div>
+
+<footer class="divider"><div class="wrap">
+  <div>© 2026 Jeff Lunglhofer · My Maestro AI</div>
+  <div><a href="/agents/">Agents</a> · <a href="/platform/">Platform</a> · <a href="/security/">Security</a> · <a href="/start/">Get started</a> · <a href="mailto:jeff@lunglhofer.com">Contact</a></div>
+</div></footer>
+</body>
+</html>
