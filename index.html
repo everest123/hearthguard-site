@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root { --bg:#1a1a19; --bg2:#22221f; --panel:#262623; --line:#36362f; --text:#ffffff; --dim:#c3c2b7; --blue:#3987e5; --blue-l:#83b9ff; --orange:#d95926; --aqua:#199e70; --violet:#8b6fd6; --gold:#c9a227; --rose:#d4588b; }
+  :root { --bg:#1a1a19; --bg2:#22221f; --panel:#262623; --line:#36362f; --text:#ffffff; --dim:#c3c2b7; --blue:#3987e5; --blue-l:#83b9ff; --orange:#d95926; --aqua:#199e70; --violet:#8b6fd6; --gold:#c9a227; --rose:#d4588b; --gray:#a7a69b; }
   * { box-sizing:border-box }
   html { scroll-behavior:smooth } @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto } *, *::before, *::after { animation:none !important; transition:none !important } }
   body { margin:0; background:var(--bg); color:var(--text); font:16px/1.6 Inter, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
@@ -50,6 +50,8 @@
   .card::before { content:""; position:absolute; inset:0 0 auto 0; height:3px; background:var(--c) }
   .card:hover { border-color:color-mix(in srgb, var(--c) 45%, var(--line)); transform:translateY(-2px) }
   .card h4 { margin:0 0 8px; font-size:17px; font-weight:600 } .card p { margin:0; color:var(--dim); font-size:15px }
+  .group { scroll-margin-top:80px } .gintro { margin:-6px 0 18px; color:var(--dim); font-size:16px; max-width:70ch }
+  .index { display:flex; flex-wrap:wrap; gap:8px; margin:-12px 0 8px } .index a { font-size:14px; color:var(--text); border:1px solid var(--line); border-radius:999px; padding:6px 14px; background:var(--bg2) } .index a::before { content:""; display:inline-block; width:8px; height:8px; border-radius:2px; background:var(--c); margin-right:8px; vertical-align:middle } .index a:hover { text-decoration:none; border-color:var(--c) }
 
   .steps { display:grid; grid-template-columns:repeat(4, 1fr); gap:20px; counter-reset:s }
   .step { background:var(--bg2); border:1px solid var(--line); border-radius:12px; padding:22px 20px 20px; position:relative }
@@ -65,7 +67,7 @@
 <body>
 <header><div class="wrap">
   <a class="brand" href="#"><img src="hub-192.png" alt="">My Maestro AI</a>
-  <nav><a href="#demo">Product</a><a href="#features">Capabilities</a><a href="#how">Deployment</a><a href="#privacy">Security</a><a href="#contact">Contact</a></nav>
+  <nav><a href="#demo">Product</a><a href="#features">Features</a><a href="#models">Models</a><a href="#control">Security</a><a href="#how">Deploy</a><a href="#contact">Contact</a></nav>
 </div></header>
 
 <div class="hero"><div class="wrap">
@@ -115,22 +117,82 @@
 </div></section>
 
 <section id="features" class="divider"><div class="wrap">
-  <h2>Capabilities</h2>
+  <h2>Features</h2>
   <p class="sub">Everything an agent needs to hold a role over months, not minutes.</p>
-  <div class="group" style="--c:var(--blue)"><h3><span></span>Memory</h3><div class="grid">
-    <div class="card" style="--c:var(--blue)"><h4>Defined identities</h4><p>An agent's role, voice and user context are plain Markdown files under version control. Edit the file and the agent changes on its next turn.</p></div>
-    <div class="card" style="--c:var(--blue)"><h4>Durable memory</h4><p>Long-term memory, session notes and a shared knowledge pool, backed by SQLite. The full transcript archive is indexed for search, so an agent can recall a detail from weeks ago with a citation.</p></div>
-    <div class="card" style="--c:var(--blue)"><h4>Agent-authored context compression</h4><p>As a context window fills, the agent writes its own carry-forward brief and continues in a fresh session with that brief, the recent turns verbatim, and search over the rest. No provider-side summarisation.</p></div>
+  <div class="index">
+    <a href="#memory" style="--c:var(--blue)">Memory</a><a href="#context" style="--c:var(--violet)">Context</a><a href="#teams" style="--c:var(--aqua)">Teams</a><a href="#models" style="--c:var(--gold)">Any model</a><a href="#work" style="--c:var(--rose)">Ongoing work</a><a href="#connect" style="--c:var(--blue-l)">Connections</a><a href="#control" style="--c:var(--orange)">Safety and control</a><a href="#everywhere" style="--c:var(--gray)">Everywhere</a>
+  </div>
+
+  <div class="group" id="memory" style="--c:var(--blue)"><h3><span></span>Memory that lasts</h3><p class="gintro">Agents remember what matters, and you can see exactly what they remember.</p><div class="grid">
+    <div class="card" style="--c:var(--blue)"><h4>Records</h4><p>Documents an agent reads in full on every turn: a project plan, a client file, a household inventory. You edit them in the agent's settings, or the agent keeps them current. They are its source of truth, never summarised or trimmed.</p></div>
+    <div class="card" style="--c:var(--blue)"><h4>Long-term memory and notes</h4><p>Each agent keeps long-term memory by topic and dated session notes, stored on your machine. Memory carries across sessions, restarts and changes of model.</p></div>
+    <div class="card" style="--c:var(--blue)"><h4>The complete transcript</h4><p>Every turn of every agent is kept in full, tool results included, and indexed for search. An agent can recall a conversation from weeks ago and cite it, and you can search the same archive from desktop or phone.</p></div>
+    <div class="card" style="--c:var(--blue)"><h4>Shared knowledge</h4><p>Findings worth sharing go into a pool every agent can read, so one agent's discovery becomes the whole team's knowledge.</p></div>
+    <div class="card" style="--c:var(--blue)"><h4>Instructions that apply at once</h4><p>Change an agent's role, its rules or its Records, and the change reaches it on its next turn, even in the middle of a session that has run for weeks.</p></div>
+    <div class="card" style="--c:var(--blue)"><h4>Plain files you own</h4><p>Personalities are Markdown, memory is SQLite, uploads are ordinary files. Everything can be read, backed up and versioned with standard tools.</p></div>
   </div></div>
-  <div class="group" style="--c:var(--aqua)"><h3><span></span>Collaboration</h3><div class="grid">
-    <div class="card" style="--c:var(--aqua)"><h4>Delegation and parallel workers</h4><p>Agents consult named colleagues or spawn ephemeral workers in parallel, each on the model chosen for the job. Deep reasoning on a frontier model, bulk work on a fast one, sensitive text on a local one. Worker activity is visible in real time.</p></div>
-    <div class="card" style="--c:var(--aqua)"><h4>Multi-provider routing</h4><p>Anthropic Claude, including Pro and Max subscriptions, OpenAI, Google Gemini, Perplexity, and local models via LM Studio, Ollama or a GPU inference server. Optional per-prompt model selection, and automatic fallback when a subscription reaches its limit.</p></div>
-    <div class="card" style="--c:var(--aqua)"><h4>Tools, jobs and schedules</h4><p>Shell, files, web, email and image generation. Charts and diagrams render in the conversation. Long-running jobs execute detached and report on completion. Scheduled tasks wake an agent on a cron or calendar.</p></div>
+
+  <div class="group" id="context" style="--c:var(--violet)"><h3><span></span>Context without limits</h3><p class="gintro">Long-running agents outgrow any context window. The hub manages that so the agent keeps its judgement.</p><div class="grid">
+    <div class="card" style="--c:var(--violet)"><h4>The agent writes its own carry-forward</h4><p>When a session fills up, the agent writes a brief of what matters, then continues in a fresh session with that brief, its Records, the recent turns word for word, and search over everything older. No provider-side summary, no silent loss of detail.</p></div>
+    <div class="card" style="--c:var(--violet)"><h4>Rehearse before any reset</h4><p>Compression can run as a rehearsal: the agent writes its brief, you read it, and nothing resets until you are satisfied. Critical agents can stay in rehearsal indefinitely.</p></div>
+    <div class="card" style="--c:var(--violet)"><h4>History on demand</h4><p>Older conversation is not crammed into every prompt. Relevant past exchanges are offered with each new message, and the agent searches the archive when it needs a specific detail.</p></div>
+    <div class="card" style="--c:var(--violet)"><h4>Budgets sized to each model</h4><p>For API and local models the hub knows each model's real context window and divides it between Records, recent conversation and recalled history, so smaller models stay coherent.</p></div>
+    <div class="card" style="--c:var(--violet)"><h4>Prompt caching</h4><p>On Claude and OpenAI models, the unchanged part of each prompt is served from the provider's cache, cutting the cost of a typical follow-up turn by up to ninety percent.</p></div>
+    <div class="card" style="--c:var(--violet)"><h4>A lead agent that knows the system</h4><p>The lead agent carries a complete map of the software and live facts about your installation, so it can configure providers, create agents and diagnose problems for you.</p></div>
   </div></div>
-  <div class="group" style="--c:var(--orange)"><h3><span></span>Governance</h3><div class="grid">
-    <div class="card" style="--c:var(--orange)"><h4>Auditable permissions</h4><p>Every tool call is classified as a read, write, send, admin or destructive action and checked against a per-agent policy. Workers cannot write outside their workspace. Financial tools are restricted to a single designated agent. Approval cards are available for actions that should wait for a person.</p></div>
-    <div class="card" style="--c:var(--orange)"><h4>Data connectors</h4><p>Connect external systems, from a patient portal to any MCP server. Each connector is granted to specific agents, protected by a passphrase per service or per group, and stores its data in a folder governed by its own policy.</p></div>
-    <div class="card" style="--c:var(--orange)"><h4>Multi-user and cost visibility</h4><p>Administrators and members with two-factor authentication, invitations, and isolated agents and files per member. A ledger records the cost of every turn; subscription usage is monitored live. Updates install from within the application.</p></div>
+
+  <div class="group" id="teams" style="--c:var(--aqua)"><h3><span></span>Teams of agents</h3><p class="gintro">Give each domain its own agent, and let them work together.</p><div class="grid">
+    <div class="card" style="--c:var(--aqua)"><h4>Agents with defined roles</h4><p>Each agent has a name, a role, a voice, a model and its own memory and files. Run a research agent, a finance agent and a project lead side by side, each an expert in its own lane.</p></div>
+    <div class="card" style="--c:var(--aqua)"><h4>Consultations</h4><p>An agent consults a named colleague, who answers with its own expertise, memory and model. If the colleague is busy, the request waits in its queue and the answer arrives when it is ready.</p></div>
+    <div class="card" style="--c:var(--aqua)"><h4>Parallel workers on any model</h4><p>For a large task an agent spawns temporary workers in parallel and picks the model for each: a frontier model for hard reasoning, a fast one for lookups, a local one for private text.</p></div>
+    <div class="card" style="--c:var(--aqua)"><h4>Teams with shared folders</h4><p>Group specialists into a team that shares a folder of working documents, coordinated by a team lead. A challenger agent can be asked to argue the other side before a conclusion stands.</p></div>
+    <div class="card" style="--c:var(--aqua)"><h4>Roundtables</h4><p>Put several agents in one structured discussion of a hard question. Runs are checkpointed, so a long roundtable survives a dropped connection or a restart without redoing finished work.</p></div>
+    <div class="card" style="--c:var(--aqua)"><h4>New specialists on request</h4><p>When a task needs expertise no agent has, an agent can request a new specialist. You approve it, and it joins with its own role, memory and model.</p></div>
+  </div></div>
+
+  <div class="group" id="models" style="--c:var(--gold)"><h3><span></span>Any model, the same tools</h3><p class="gintro">Choose the model per agent or per task. Memory and tools stay identical.</p><div class="grid">
+    <div class="card" style="--c:var(--gold)"><h4>Subscriptions and API keys</h4><p>Use a Claude Pro or Max subscription, a ChatGPT subscription through Codex, or API keys for Anthropic, OpenAI, Google Gemini and Perplexity. The model picker shows which models bill your subscription and which bill per token.</p></div>
+    <div class="card" style="--c:var(--gold)"><h4>Models on your own GPU</h4><p>A built-in proxy runs local models with llama.cpp or NInfer, loads each on demand and swaps them on a single GPU. LM Studio and Ollama work too. Local turns cost nothing and never leave the machine.</p></div>
+    <div class="card" style="--c:var(--gold)"><h4>One set of tools everywhere</h4><p>Memory, Records, recall, consultations, jobs, schedules, files and the permission gate behave identically on every model, so switching models never costs a capability.</p></div>
+    <div class="card" style="--c:var(--gold)"><h4>Switch from the chat</h4><p>Change an agent's model or its reasoning effort from the chat header on desktop or phone. The next turn uses the new choice.</p></div>
+    <div class="card" style="--c:var(--gold)"><h4>Fallback near plan limits</h4><p>When a subscription approaches its usage limit, the hub moves the next turns to the next model down and says so in the conversation.</p></div>
+    <div class="card" style="--c:var(--gold)"><h4>Images in and out</h4><p>Agents read photos, screenshots and scanned PDFs, and create illustrations with Google or OpenAI image models. Charts, diagrams and small interactive views render directly in the conversation.</p></div>
+  </div></div>
+
+  <div class="group" id="work" style="--c:var(--rose)"><h3><span></span>Work that keeps going</h3><p class="gintro">Agents do not stop when you stop typing.</p><div class="grid">
+    <div class="card" style="--c:var(--rose)"><h4>Schedules and follow-ups</h4><p>Agents schedule their own follow-ups in plain language, once or on repeat: tomorrow at nine, every weekday at 8:15, every Monday. When the time comes the agent wakes with the task and reports in its chat.</p></div>
+    <div class="card" style="--c:var(--rose)"><h4>Background jobs</h4><p>Long work such as a build, a data pull or a backtest runs detached from the conversation. When it finishes, the agent is woken with the result and picks up from there.</p></div>
+    <div class="card" style="--c:var(--rose)"><h4>Questions that wait for you</h4><p>When an agent needs a decision mid-task it asks with buttons and a text box, and waits. A question survives a closed laptop, a lost connection or a reloaded page.</p></div>
+    <div class="card" style="--c:var(--rose)"><h4>Interject or stop at any time</h4><p>Type while an agent is mid-task and it takes your message into account without starting over. Stop any agent from any device.</p></div>
+    <div class="card" style="--c:var(--rose)"><h4>Watch the work happen</h4><p>See which agents are busy, which tools they are calling and what each worker is doing, live, on desktop and on your phone.</p></div>
+    <div class="card" style="--c:var(--rose)"><h4>Scripts can wake an agent</h4><p>A monitoring script or a bot can start a turn for a specific agent, so an alert, an email or a price move reaches the right agent without you relaying it.</p></div>
+  </div></div>
+
+  <div class="group" id="connect" style="--c:var(--blue-l)"><h3><span></span>Connected to your world</h3><p class="gintro">Agents reach the systems you choose, with credentials the hub holds, not the agent.</p><div class="grid">
+    <div class="card" style="--c:var(--blue-l)"><h4>Data connectors</h4><p>Plug in any MCP server: a mailbox, a document store, an internal API. Credentials are encrypted, protected by a passphrase per service or per group, and each connector is granted to named agents only.</p></div>
+    <div class="card" style="--c:var(--blue-l)"><h4>Modules with guided setup</h4><p>Optional capabilities install through a step-by-step setup that explains each step, checks your keys and sets limits before anything goes live. A Coinbase exchange module is the first.</p></div>
+    <div class="card" style="--c:var(--blue-l)"><h4>Web search and reading</h4><p>Search through Brave, Perplexity, Serper, Tavily, a self-hosted SearXNG, or DuckDuckGo with no key at all. Pages come back as clean text, PDFs are read, and pages that need JavaScript are rendered in a headless browser.</p></div>
+    <div class="card" style="--c:var(--blue-l)"><h4>API tokens for your scripts</h4><p>Give a script or a bot a token scoped to exactly what it needs, such as waking one agent. Tokens work from the hub's own machine unless you allow otherwise, can expire, and are revoked in one click.</p></div>
+    <div class="card" style="--c:var(--blue-l)"><h4>An OpenAI-compatible API</h4><p>Other applications can talk to your agents through a standard chat-completions endpoint, protected by a token.</p></div>
+    <div class="card" style="--c:var(--blue-l)"><h4>Messaging and skills</h4><p>Agents can message you on Telegram, and connect to Google Workspace, GitHub and other services as skills.</p></div>
+  </div></div>
+
+  <div class="group" id="control" style="--c:var(--orange)"><h3><span></span>Safety and control</h3><p class="gintro">Capable agents need firm boundaries. Every action passes a policy you set.</p><div class="grid">
+    <div class="card" style="--c:var(--orange)"><h4>A policy gate on every action</h4><p>Each tool call is classified as a read, write, send, admin, destructive or money action and checked against the agent's role and your overrides before it runs. One switch halts every agent at once.</p></div>
+    <div class="card" style="--c:var(--orange)"><h4>Approval when you want it</h4><p>Choose which kinds of action always wait for you, such as anything destructive or anything that spends money, and approve them from a card on desktop or phone.</p></div>
+    <div class="card" style="--c:var(--orange)"><h4>Sandboxed agents</h4><p>An agent's shell and files can run inside its own container, which sees only its workspace and the folders you grant. The hub can keep sign-in credentials outside the container entirely.</p></div>
+    <div class="card" style="--c:var(--orange)"><h4>Root, by your hand only</h4><p>Administrator rights on the machine belong to the lead agent alone. You can grant another agent root for a set time, and every root command is logged.</p></div>
+    <div class="card" style="--c:var(--orange)"><h4>A built-in security check</h4><p>Every night the hub reviews its own setup: accounts and two-factor, network exposure, file permissions, agent permissions, tokens and open services. It says what to fix and how, and also runs from a terminal when the hub is down.</p></div>
+    <div class="card" style="--c:var(--orange)"><h4>People and accounts</h4><p>Administrators and members, each with two-factor authentication. Members' agents run in containers, cannot reach other members' agents or files, and have only the permissions you grant.</p></div>
+  </div></div>
+
+  <div class="group" id="everywhere" style="--c:var(--gray)"><h3><span></span>Everywhere you are</h3><p class="gintro">One hub, reachable from your desk or your pocket.</p><div class="grid">
+    <div class="card" style="--c:var(--gray)"><h4>Desktop and phone apps</h4><p>A full desktop interface and an installable phone app, with the same agents, history, files and controls. Pages reconnect and catch up after sleep, a lost signal or a restart.</p></div>
+    <div class="card" style="--c:var(--gray)"><h4>Push notifications</h4><p>Your phone tells you when an agent finishes, asks a question or needs an approval.</p></div>
+    <div class="card" style="--c:var(--gray)"><h4>Files for every agent</h4><p>Each agent has its own files area for uploads and results. Drop a document or a photo into the chat and the agent reads it.</p></div>
+    <div class="card" style="--c:var(--gray)"><h4>Costs in plain sight</h4><p>Every turn is costed in a ledger, subscription and pay-per-token usage are labelled apart, and subscription limits are shown as they are used.</p></div>
+    <div class="card" style="--c:var(--gray)"><h4>Updates in one click</h4><p>Update from the toolbar or the phone menu, choosing the stable or the experimental channel each time. The hub installs, restarts and confirms it came back.</p></div>
+    <div class="card" style="--c:var(--gray)"><h4>A setup checklist</h4><p>The hub checks its own machine and lists anything missing, with the exact fix for your platform, from Docker to PDF reading.</p></div>
   </div></div>
 </div></section>
 
@@ -144,7 +206,7 @@
     <div class="step" style="--c:var(--orange)"><h4>Operate</h4><p>Work with agents from desktop or mobile. They retain context across sessions, delegate, run jobs, and request decisions when policy requires one.</p></div>
   </div>
   <p class="sub" style="margin:44px 0 0">Supported providers and integrations</p>
-  <div class="providers"><span>Anthropic Claude</span><span>OpenAI</span><span>Google Gemini</span><span>Perplexity</span><span>Codex CLI</span><span>LM Studio</span><span>Ollama</span><span>NInfer, local GPU</span><span>MCP servers</span><span>Google Workspace</span><span>GitHub</span></div>
+  <div class="providers"><span>Anthropic Claude: subscription or API</span><span>OpenAI: API or ChatGPT via Codex</span><span>Google Gemini</span><span>Perplexity</span><span>llama.cpp</span><span>NInfer</span><span>LM Studio</span><span>Ollama</span><span>MCP servers</span><span>Google Workspace</span><span>GitHub</span><span>Telegram</span><span>Brave · Serper · Tavily · SearXNG</span><span>Coinbase</span></div>
 </div></section>
 
 <section id="privacy" class="divider"><div class="wrap two">
