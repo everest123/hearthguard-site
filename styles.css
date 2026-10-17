@@ -23,7 +23,9 @@ nav a.nav-cta { color:#101a28; background:var(--blue-l); padding:7px 14px; borde
 /* Heroes */
 .hero { padding:112px 0 84px; background:radial-gradient(900px 420px at 18% -10%, rgba(57,135,229,.16), transparent 60%), radial-gradient(700px 360px at 92% 10%, rgba(212,88,139,.08), transparent 60%) }
 .hero .wrap { display:grid; grid-template-columns:1.15fr .85fr; gap:48px; align-items:center }
-.hero h1 { font-size:clamp(2.7rem, 5.6vw, 4.4rem); line-height:1.04; margin:0 0 22px; max-width:16ch; text-wrap:balance }
+.hero h1 { font-size:clamp(2.6rem, 5.2vw, 4.1rem); line-height:1.06; margin:0 0 22px; max-width:17ch; text-wrap:balance }
+.hero h1 em { font-style:italic; color:var(--blue-l) }
+.hero-pre { font-family:"Instrument Serif", Georgia, serif; font-style:italic; font-size:clamp(1.5rem, 2.6vw, 2rem); color:var(--gold); margin:0 0 8px; line-height:1.2 }
 .page-hero { padding:96px 0 28px; background:radial-gradient(900px 380px at 15% -20%, rgba(57,135,229,.14), transparent 60%) }
 .page-hero h1 { font-size:clamp(2.4rem, 5vw, 3.8rem); line-height:1.06; margin:0 0 20px; max-width:20ch; text-wrap:balance }
 .eyebrow { font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); margin:0 0 16px; font-weight:600 }
@@ -42,12 +44,6 @@ h2 { font-size:40px; line-height:1.15; margin:0 0 12px } .sub { color:var(--dim)
 .two.even { grid-template-columns:1fr 1fr; align-items:start }
 ul.check { list-style:none; padding:0; margin:0 } ul.check li { padding:8px 0 8px 28px; position:relative; color:var(--dim) } ul.check li::before { content:"✓"; color:var(--aqua); position:absolute; left:4px; font-weight:700 }
 
-/* Proof strip */
-.stats-band { padding:56px 0; background:var(--bg2); border-top:1px solid var(--line); border-bottom:1px solid var(--line) }
-.stats-band .eyebrow { color:var(--dim); text-align:center; margin-bottom:28px }
-.stats { display:grid; grid-template-columns:repeat(4, 1fr); gap:24px; text-align:center }
-.stat .num { font-family:"Instrument Serif", Georgia, serif; font-size:52px; line-height:1; color:var(--text) }
-.stat .lbl { color:var(--dim); font-size:14px; margin-top:10px; max-width:24ch; margin-left:auto; margin-right:auto }
 
 /* Pillars */
 .pillars { display:grid; grid-template-columns:1fr 1fr; gap:22px }
@@ -103,11 +99,11 @@ footer { padding:36px 0 48px; color:var(--dim); font-size:14px } footer .wrap { 
   nav { width:100%; gap:18px; overflow-x:auto; padding-bottom:4px }
   .hero .wrap, .two, .two.even { grid-template-columns:1fr } .hero svg { display:none }
   .hero { padding-top:72px } .page-hero { padding-top:64px }
-  .grid, .steps, .pillars { grid-template-columns:1fr 1fr } .stats { grid-template-columns:1fr 1fr; row-gap:36px }
+  .grid, .steps, .pillars { grid-template-columns:1fr 1fr }
   h2 { font-size:32px } .group h2 { font-size:28px } section { padding:64px 0 }
 }
 @media (max-width:560px) {
   .grid, .grid.g2, .grid.g4, .steps, .pillars { grid-template-columns:1fr }
   .cta, .cta.alt { margin-top:10px }
-  .pillar { padding:24px } .pillar h3 { font-size:26px } .stat .num { font-size:42px }
+  .pillar { padding:24px } .pillar h3 { font-size:26px }
 }
