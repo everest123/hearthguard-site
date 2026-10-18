@@ -113,3 +113,10 @@ footer { padding:36px 0 48px; color:var(--dim); font-size:14px } footer .wrap { 
 .cmdbox code { background:none; padding:0; font-size:15px; flex:1; overflow-x:auto; white-space:nowrap; color:var(--text) }
 .cmdbox button { background:var(--blue-l); color:#101a28; border:0; border-radius:6px; padding:7px 12px; font-weight:600; cursor:pointer; font:inherit; font-size:13px }
 .small-note { color:var(--dim); font-size:14px; margin:0 0 8px; max-width:76ch }
+.cmd-cap { color:var(--dim); font-size:14px; margin:22px 0 8px }
+.hero .cmdbox { max-width:600px; margin-bottom:6px } .hero .cmdbox code { font-size:14px }
+.band .cmd-cap { margin-top:4px }
+.band .cmdbox { margin:0 auto 22px; text-align:left }
+@media (max-width: 700px) { .cmdbox code { font-size:13px; white-space:normal; overflow-wrap:anywhere } }
+.cmdbox { min-width:0; max-width:100% } .cmdbox code { min-width:0 }
+.hero .wrap > div { min-width:0 }
