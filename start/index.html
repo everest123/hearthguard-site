@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Get started · My Maestro AI</title>
-<meta name="description" content="My Maestro AI is one Node.js service with no external database. Install it on a Linux machine or a Mac, connect an AI provider, and meet your first agent.">
+<meta name="description" content="Install My Maestro AI on a Mac or a Linux machine with one command, connect an AI provider, and meet your first agent. The code is public on GitHub.">
 <link rel="icon" href="/hub-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -23,10 +23,16 @@
 </div></div>
 
 <div class="wrap">
+  <div class="group" id="install" style="--c:var(--blue)"><h2><span></span>Install in one command</h2>
+    <p class="gintro">On a Mac or a Linux machine (on Windows, inside WSL), in a terminal:</p>
+    <div class="cmdbox"><code id="install-cmd">curl -fsSL https://mymaestroai.ai/install.sh | bash</code><button type="button" onclick="navigator.clipboard.writeText(document.getElementById('install-cmd').textContent).then(()=>{this.textContent='Copied'})">Copy</button></div>
+    <p class="small-note">Everything goes into your home folder, without sudo: its own Node.js (checksum verified), the code from <a href="https://github.com/mymaestroai/mymaestroai">GitHub</a>, and a service that starts by itself. Then the Welcome page opens to create your account, turn on two-factor sign-in and connect your first AI.</p>
+    <p class="small-note">Prefer to read it first? <code>curl -fsSLO https://mymaestroai.ai/install.sh</code>, open <code>install.sh</code>, then run <code>bash install.sh</code>. The same script is <a href="https://github.com/mymaestroai/mymaestroai/blob/main/install/install.sh">install/install.sh</a> in the repository.</p>
+  </div>
   <div class="group" style="--c:var(--blue)"><h2><span></span>Four steps</h2>
     <p class="gintro">From a fresh machine to a working team.</p>
     <div class="steps">
-      <div class="step" style="--c:var(--blue)"><h4>Install</h4><p>Ask for access, clone the repository, run <code>npm install</code> and start the service. It runs under systemd or launchd and restarts itself after updates.</p></div>
+      <div class="step" style="--c:var(--blue)"><h4>Install</h4><p>Run the command above. It installs the service and opens the Welcome page, where you create your account and connect an AI. It runs under systemd or launchd and restarts itself after updates.</p></div>
       <div class="step" style="--c:var(--violet)"><h4>Meet your lead agent</h4><p>Your first agent, Maestro, carries a complete map of the software. It helps you connect providers, create agents and fix anything the setup checklist flags.</p></div>
       <div class="step" style="--c:var(--aqua)"><h4>Build your team</h4><p>Give each agent a name, a model and a description of its role. The hub writes its identity, and you refine it as you get to know each other.</p></div>
       <div class="step" style="--c:var(--rose)"><h4>Take it everywhere</h4><p>Install the phone app, turn on notifications, and connect the services your agents need. A private network such as Tailscale reaches the hub from anywhere.</p></div>
@@ -36,7 +42,7 @@
   <div class="group" style="--c:var(--gold)"><h2><span></span>What you need</h2>
     <div class="two even">
       <ul class="check">
-        <li>A computer that stays on, running Linux or macOS, with Node.js 22 or newer.</li>
+        <li>A computer that stays on, running Linux or macOS (Windows: inside WSL). The installer brings its own Node.js.</li>
         <li>At least one AI provider: a Claude or ChatGPT subscription, an API key from Anthropic, OpenAI, Google or Perplexity, or a local model.</li>
         <li>Optional: Docker, for agent sandboxes.</li>
         <li>Optional: an NVIDIA GPU or Apple silicon, for models that run entirely on your machine.</li>
@@ -52,17 +58,24 @@
     <div class="two even">
       <p class="gintro">My Maestro AI is source-available under the PolyForm Noncommercial license: free for personal, research and self-hosted non-commercial use. Commercial deployment, including use on behalf of clients, is available under a separate commercial license.</p>
       <div>
-        <p class="gintro" style="margin-bottom:16px">My Maestro AI is developed by Jeff Lunglhofer. For access, commercial licensing or integration questions:</p>
+        <p class="gintro" style="margin-bottom:16px">My Maestro AI is developed by Jeff Lunglhofer. The code is public at <a href="https://github.com/mymaestroai/mymaestroai">github.com/mymaestroai/mymaestroai</a>. For commercial licensing or integration questions:</p>
         <a class="cta" href="mailto:jeff@lunglhofer.com">jeff@lunglhofer.com</a>
       </div>
     </div>
   </div>
 </div>
 
+<div class="wrap">
+  <div class="group" style="--c:var(--violet)"><h2><span></span>Installed during the private preview?</h2>
+    <p class="gintro">Your hub moves itself to the public repository: open <b>Update</b>, which offers "Move to the public repository", then restart. If Update says "Update blocked" (hubs installed before October 14, 2026), run this once in the hub folder instead:</p>
+    <div class="cmdbox"><code id="move-cmd">curl -fsSL https://mymaestroai.ai/move.sh | bash</code><button type="button" onclick="navigator.clipboard.writeText(document.getElementById('move-cmd').textContent).then(()=>{this.textContent='Copied'})">Copy</button></div>
+    <p class="small-note">It backs up the folder first, keeps your data, workspaces, settings and agent files, and copies aside any program file you edited. Then restart the hub once.</p>
+  </div>
+</div>
 <section class="band divider" style="margin-top:72px"><div class="wrap">
   <h2>Your team is waiting to meet you.</h2>
   <p class="sub">Start with one. Before long, you will wonder how you managed without the team.</p>
-  <a class="cta" href="mailto:jeff@lunglhofer.com">Get in touch</a><a class="cta alt" href="/agents/">Meet your team</a>
+  <a class="cta" href="#install">Install it</a><a class="cta alt" href="https://github.com/mymaestroai/mymaestroai">View on GitHub</a>
 </div></section>
 
 <footer class="divider"><div class="wrap">
