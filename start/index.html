@@ -30,6 +30,9 @@
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
+<!-- security-notice:start (5.5.1; take down after 2026-11-04) -->
+<aside class="notice" aria-label="Security update"><div class="wrap"><p><span aria-hidden="true">🔒 </span><b>Security update, October 21:</b> Node.js fixed high-severity issues. Running My Maestro AI? Update the hub to 5.5.1, then its Node.js. <a href="/start/#update">How to update&nbsp;→</a></p></div></aside>
+<!-- security-notice:end -->
 <header><div class="wrap">
   <a class="brand" href="/"><img src="/hub-192.png" alt="">My Maestro AI</a>
   <nav aria-label="Main"><a href="/agents/">Your team</a><a href="/platform/">Platform</a><a href="/security/">Security</a><a class="nav-cta" href="/start/" aria-current="page">Get started</a></nav>
@@ -47,6 +50,14 @@
     <div class="cmdbox"><code id="install-cmd">curl -fsSL https://mymaestroai.ai/install.sh | bash</code><button type="button" onclick="navigator.clipboard.writeText(document.getElementById('install-cmd').textContent).then(()=>{this.textContent='Copied'})">Copy</button></div>
     <p class="small-note">Everything goes into your home folder, without sudo: its own Node.js (checksum verified), the code from <a href="https://github.com/mymaestroai/mymaestroai">GitHub</a>, and a service that starts by itself. Then the Welcome page opens to create your account, turn on two-factor sign-in and connect your first AI.</p>
     <p class="small-note">Prefer to read it first? <code>curl -fsSLO https://mymaestroai.ai/install.sh</code>, open <code>install.sh</code>, then run <code>bash install.sh</code>. The same script is <a href="https://github.com/mymaestroai/mymaestroai/blob/main/install/install.sh">install/install.sh</a> in the repository.</p>
+  </div>
+  <div class="group" id="update" style="--c:var(--gold)"><h2><span></span>Update your hub</h2>
+    <p class="gintro"><b>5.5.1 is a security release (October 21, 2026).</b> Node.js fixed high-severity security issues. A hub that was already running may still use a Node.js without those fixes, even after it updates itself, so updating takes two steps:</p>
+    <div class="steps s2">
+      <div class="step" style="--c:var(--gold)"><h4>Press Update</h4><p>On a computer: the ⋯ menu, then <b>Update from GitHub</b>. On the phone: the ⋮ menu, then <b>Update hub</b>. Keep your current channel: either way the hub ends up on 5.5.1. It restarts by itself.</p></div>
+      <div class="step" style="--c:var(--gold)"><h4>Check its Node.js</h4><p>Open <b>Settings → Status → Security check</b>. If it flags Node.js, follow the fix it shows there, which is written for your install, or ask your Maestro to do it (it asks before running anything). You are done when the Node.js line is no longer flagged.</p></div>
+    </div>
+    <p class="small-note">Installed during the private preview? Start with <a href="#preview">the move to the public repository</a> below. More: <a href="/security/#releases">Security releases</a> · <a href="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases">Node.js security releases, October 2026</a></p>
   </div>
   <div class="group" style="--c:var(--blue)"><h2><span></span>Four steps</h2>
     <p class="gintro">From a fresh machine to a working team.</p>
@@ -85,7 +96,7 @@
 </div>
 
 <div class="wrap">
-  <div class="group" style="--c:var(--violet)"><h2><span></span>Installed during the private preview?</h2>
+  <div class="group" id="preview" style="--c:var(--violet)"><h2><span></span>Installed during the private preview?</h2>
     <p class="gintro">Your hub moves itself to the public repository: open <b>Update</b>, which offers "Move to the public repository", then restart. If Update says "Update blocked" (hubs installed before October 14, 2026), run this once in the hub folder instead:</p>
     <div class="cmdbox"><code id="move-cmd">curl -fsSL https://mymaestroai.ai/move.sh | bash</code><button type="button" onclick="navigator.clipboard.writeText(document.getElementById('move-cmd').textContent).then(()=>{this.textContent='Copied'})">Copy</button></div>
     <p class="small-note">It backs up the folder first, keeps your data, workspaces, settings and agent files, and copies aside any program file you edited. Then restart the hub once.</p>

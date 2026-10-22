@@ -120,3 +120,12 @@ footer { padding:36px 0 48px; color:var(--dim); font-size:14px } footer .wrap { 
 @media (max-width: 700px) { .cmdbox code { font-size:13px; white-space:normal; overflow-wrap:anywhere } }
 .cmdbox { min-width:0; max-width:100% } .cmdbox code { min-width:0 }
 .hero .wrap > div { min-width:0 }
+
+/* Security notice bar for 5.5.1 (October 21, 2026): take it down after 2026-11-04, with the <aside class="notice"> on every page */
+.notice { background:linear-gradient(90deg, rgba(201,162,39,.16), rgba(201,162,39,.08)); border-bottom:1px solid rgba(201,162,39,.4); font-size:14px }
+.notice .wrap { padding-top:10px; padding-bottom:10px }
+.notice p { margin:0; line-height:1.5; color:var(--text) }
+.notice b { color:var(--gold); font-weight:600 }
+.notice a { font-weight:600; white-space:nowrap }
+.steps.s2 { grid-template-columns:repeat(2, 1fr) }
+@media (max-width:560px) { .steps.s2 { grid-template-columns:1fr } }
