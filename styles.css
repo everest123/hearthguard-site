@@ -130,7 +130,7 @@ footer { padding:36px 0 48px; color:var(--dim); font-size:14px } footer .wrap { 
 .steps.s2 { grid-template-columns:repeat(2, 1fr) }
 @media (max-width:560px) { .steps.s2 { grid-template-columns:1fr } }
 
-/* "Before you install" band (home) and "What you're trusting" (Security) */
+/* "Before you install" band (home) and "Security overview" (Security) */
 .trust-band { padding:56px 0 8px }
 .tb { position:relative; overflow:hidden; display:grid; grid-template-columns:1.1fr .9fr; gap:40px; align-items:center; background:var(--bg2); border:1px solid var(--line); border-radius:14px; padding:34px 36px }
 .tb::before { content:""; position:absolute; inset:0 0 auto 0; height:3px; background:var(--blue) }

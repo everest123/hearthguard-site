@@ -43,13 +43,13 @@
   <h1>Powerful agents. Firm boundaries.</h1>
   <p class="lead">Your agents do real work on real systems. My Maestro AI is built to keep them to the work you allow, on hardware you own, and to tell you when something needs your attention.</p>
   <div class="index">
-    <a href="#trust" style="--c:var(--blue)">What you're trusting</a><a href="#data" style="--c:var(--aqua)">Your data</a><a href="#actions" style="--c:var(--orange)">Every action checked</a><a href="#contained" style="--c:var(--violet)">Contained</a><a href="#watch" style="--c:var(--gold)">Self-checking</a><a href="#releases" style="--c:var(--rose)">Security releases</a><a href="#license" style="--c:var(--blue)">License</a>
+    <a href="#overview" style="--c:var(--blue)">Security overview</a><a href="#data" style="--c:var(--aqua)">Your data</a><a href="#actions" style="--c:var(--orange)">Every action checked</a><a href="#contained" style="--c:var(--violet)">Contained</a><a href="#watch" style="--c:var(--gold)">Self-checking</a><a href="#releases" style="--c:var(--rose)">Security releases</a><a href="#license" style="--c:var(--blue)">License</a>
   </div>
 </div></div>
 
 <div class="wrap">
-  <div class="group" id="trust" style="--c:var(--blue)"><h2><span></span>What you're trusting</h2>
-    <p class="gintro">My Maestro AI is built to keep agents within the limits you set. Still, a team of agents with real access depends on many moving parts, and each one is part of your security. This is what you're trusting when you run it.</p>
+  <div class="group" id="overview" style="--c:var(--blue)"><h2><span></span>Security overview</h2>
+    <p class="gintro">My Maestro AI is built to keep agents within the limits you set. Still, a team of agents with real access depends on many moving parts, and each one is part of your security. Here is each of them, and how we recommend using your Maestro.</p>
     <div class="grid">
       <div class="card" style="--c:var(--blue)"><h4>This computer</h4><p>Your Maestro runs on your computer and listens only there, unless you turn on remote access, which needs two-factor. Keeping it safe also depends on that computer: its updates, passwords and disk encryption, and who else can use it. Agents that run directly on the computer can do what its user account can do; others run in a container that sees only the folders you grant.</p></div>
       <div class="card" style="--c:var(--blue)"><h4>Your AI models</h4><p>A cloud model (Claude, GPT, Gemini and others) receives what an agent sends it: your messages, the conversation so far, the files and pages it works on, and tool results. The provider handles them under its own terms. A model running on your computer processes requests there, though tools and connected accounts can still send information out.</p></div>
@@ -78,29 +78,29 @@
   </div>
 
   <div class="group" id="actions" style="--c:var(--orange)"><h2><span></span>Every action checked</h2>
-    <p class="gintro">Agents act through tools, and every tool call passes a policy you set before it runs.</p>
+    <p class="gintro">Agents act through tools, and your Maestro checks their tool calls against a policy you set before they run.</p>
     <div class="grid g4">
       <div class="card" style="--c:var(--orange)"><h4>A policy gate on every action</h4><p>Each tool call is classified as a read, a write, a send, an administrative, destructive or money action, and checked against the agent's role and your overrides. One switch halts every agent at once.</p></div>
-      <div class="card" style="--c:var(--orange)"><h4>Approval when you want it</h4><p>Choose which kinds of action always wait for you, such as anything destructive or anything that spends money, and approve them from a card on your desktop or phone.</p></div>
+      <div class="card" style="--c:var(--orange)"><h4>Approval when you want it</h4><p>Choose which kinds of action always wait for you, such as destructive actions or actions that spend money, and approve them from a card on your desktop or phone.</p></div>
       <div class="card" style="--c:var(--orange)"><h4>Root, by your hand only</h4><p>Administrator rights on the machine are reserved for the lead agent, unless you lend another agent root for a set time. Your Maestro logs the root commands it sees. For added protection, don't let the computer account your Maestro runs under use administrator rights without a password (password-free sudo).</p></div>
-      <div class="card" style="--c:var(--orange)"><h4>Money behind a firewall</h4><p>Trading wallets sign only within the limits and the address book you set, and anything that moves money can be set to wait for your approval.</p></div>
+      <div class="card" style="--c:var(--orange)"><h4>Money behind a firewall</h4><p>Trading wallets are built to sign only within the limits and the address book you set, and money actions can be set to wait for your approval.</p></div>
     </div>
   </div>
 
   <div class="group" id="contained" style="--c:var(--violet)"><h2><span></span>Contained by design</h2>
-    <p class="gintro">Each agent sees what it needs, and nothing more.</p>
+    <p class="gintro">Each agent can be limited to what it needs.</p>
     <div class="grid g4">
       <div class="card" style="--c:var(--violet)"><h4>Sandboxed agents</h4><p>An agent's shell can run inside its own container, which mounts only its workspace and the folders you grant, and its file tools check where symbolic links lead before following them.</p></div>
       <div class="card" style="--c:var(--violet)"><h4>Private family members</h4><p>Members' agents run in containers, with access controls designed to keep each member's agents and files apart, and members get only the permissions you grant them. Sharing an agent with a member lets them use and change it and see its files, so share only with members you trust.</p></div>
-      <div class="card" style="--c:var(--violet)"><h4>Scoped tokens for scripts</h4><p>A script gets a token for exactly what it needs, usable only from the hub's own machine unless you allow more, with an expiry date and one-click revoke.</p></div>
+      <div class="card" style="--c:var(--violet)"><h4>Scoped tokens for scripts</h4><p>A script gets a token scoped to what it needs, usable only from your Maestro's own computer unless you allow more, with an expiry you can set and one-click revoke.</p></div>
       <div class="card" style="--c:var(--violet)"><h4>Two-factor sign-in</h4><p>Accounts sign in with a password and an authenticator code, and the security check flags any account that has not set it up.</p></div>
     </div>
   </div>
 
   <div class="group" id="watch" style="--c:var(--gold)"><h2><span></span>It watches itself</h2>
-    <p class="gintro">Security is not a setting you choose once. The hub checks itself every day.</p>
+    <p class="gintro">Security is not a setting you choose once. Your Maestro checks itself every day.</p>
     <div class="grid g2">
-      <div class="card" style="--c:var(--gold)"><h4>A nightly security check</h4><p>Every night the hub reviews its accounts and two-factor, network exposure, file permissions, agent permissions, tokens and open services, and tells you exactly what to fix. It runs from a terminal too, even when the hub is down.</p></div>
+      <div class="card" style="--c:var(--gold)"><h4>A nightly security check</h4><p>Every night your Maestro reviews its accounts and two-factor, network exposure, file permissions, agent permissions, tokens and open services, and tells you what to fix. It runs from a terminal too, even when your Maestro is down.</p></div>
       <div class="card" style="--c:var(--gold)"><h4>A record of everything</h4><p>Every turn is kept in the transcript, every root command and permission change is logged, and every turn is costed in the ledger. You can always see who did what, and when.</p></div>
     </div>
   </div>
