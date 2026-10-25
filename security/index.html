@@ -41,7 +41,7 @@
 <div class="page-hero"><div class="wrap">
   <p class="eyebrow">Security</p>
   <h1>Powerful agents. Firm boundaries.</h1>
-  <p class="lead">Your agents do real work on real systems. My Maestro AI makes sure they do only the work you allow, on hardware you own, and tells you the moment anything needs attention.</p>
+  <p class="lead">Your agents do real work on real systems. My Maestro AI is built to keep them to the work you allow, on hardware you own, and to tell you when something needs your attention.</p>
   <div class="index">
     <a href="#trust" style="--c:var(--blue)">What you're trusting</a><a href="#data" style="--c:var(--aqua)">Your data</a><a href="#actions" style="--c:var(--orange)">Every action checked</a><a href="#contained" style="--c:var(--violet)">Contained</a><a href="#watch" style="--c:var(--gold)">Self-checking</a><a href="#releases" style="--c:var(--rose)">Security releases</a><a href="#license" style="--c:var(--blue)">License</a>
   </div>
@@ -82,7 +82,7 @@
     <div class="grid g4">
       <div class="card" style="--c:var(--orange)"><h4>A policy gate on every action</h4><p>Each tool call is classified as a read, a write, a send, an administrative, destructive or money action, and checked against the agent's role and your overrides. One switch halts every agent at once.</p></div>
       <div class="card" style="--c:var(--orange)"><h4>Approval when you want it</h4><p>Choose which kinds of action always wait for you, such as anything destructive or anything that spends money, and approve them from a card on your desktop or phone.</p></div>
-      <div class="card" style="--c:var(--orange)"><h4>Root, by your hand only</h4><p>Administrator rights on the machine belong to the lead agent alone. You can lend another agent root for a set time, and every root command is logged.</p></div>
+      <div class="card" style="--c:var(--orange)"><h4>Root, by your hand only</h4><p>Administrator rights on the machine are reserved for the lead agent, unless you lend another agent root for a set time. Your Maestro logs the root commands it sees. For added protection, don't let the computer account your Maestro runs under use administrator rights without a password (password-free sudo).</p></div>
       <div class="card" style="--c:var(--orange)"><h4>Money behind a firewall</h4><p>Trading wallets sign only within the limits and the address book you set, and anything that moves money can be set to wait for your approval.</p></div>
     </div>
   </div>
@@ -90,8 +90,8 @@
   <div class="group" id="contained" style="--c:var(--violet)"><h2><span></span>Contained by design</h2>
     <p class="gintro">Each agent sees what it needs, and nothing more.</p>
     <div class="grid g4">
-      <div class="card" style="--c:var(--violet)"><h4>Sandboxed agents</h4><p>An agent's shell and files can run inside its own container, which sees only its workspace and the folders you grant. Sign-in credentials can stay outside the container entirely.</p></div>
-      <div class="card" style="--c:var(--violet)"><h4>Private family members</h4><p>Members' agents run in containers and cannot reach another member's agents or files. Members get only the permissions you grant them.</p></div>
+      <div class="card" style="--c:var(--violet)"><h4>Sandboxed agents</h4><p>An agent's shell can run inside its own container, which mounts only its workspace and the folders you grant, and its file tools check where symbolic links lead before following them.</p></div>
+      <div class="card" style="--c:var(--violet)"><h4>Private family members</h4><p>Members' agents run in containers, with access controls designed to keep each member's agents and files apart, and members get only the permissions you grant them. Sharing an agent with a member lets them use and change it and see its files, so share only with members you trust.</p></div>
       <div class="card" style="--c:var(--violet)"><h4>Scoped tokens for scripts</h4><p>A script gets a token for exactly what it needs, usable only from the hub's own machine unless you allow more, with an expiry date and one-click revoke.</p></div>
       <div class="card" style="--c:var(--violet)"><h4>Two-factor sign-in</h4><p>Accounts sign in with a password and an authenticator code, and the security check flags any account that has not set it up.</p></div>
     </div>
