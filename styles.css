@@ -129,3 +129,17 @@ footer { padding:36px 0 48px; color:var(--dim); font-size:14px } footer .wrap { 
 .notice a { font-weight:600; white-space:nowrap }
 .steps.s2 { grid-template-columns:repeat(2, 1fr) }
 @media (max-width:560px) { .steps.s2 { grid-template-columns:1fr } }
+
+/* "Before you install" band (home) and "What you're trusting" (Security) */
+.trust-band { padding:56px 0 8px }
+.tb { position:relative; overflow:hidden; display:grid; grid-template-columns:1.1fr .9fr; gap:40px; align-items:center; background:var(--bg2); border:1px solid var(--line); border-radius:14px; padding:34px 36px }
+.tb::before { content:""; position:absolute; inset:0 0 auto 0; height:3px; background:var(--blue) }
+.tb h2 { font-size:clamp(1.9rem, 3.4vw, 2.6rem); line-height:1.1; margin:0 0 14px }
+.tb p { color:var(--dim); margin:0 0 14px }
+.tb .more { font-weight:600 }
+.tb-points { list-style:none; margin:0; padding:0; display:grid; gap:12px }
+.tb-points li { background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:14px 16px; color:var(--dim); font-size:15px }
+.tb-points li b { color:var(--text) }
+.rec-card ul { margin:8px 0 0 18px; padding:0; color:var(--dim) } .rec-card li { margin:7px 0 }
+.fine { font-size:13px; color:var(--gray); margin:16px 0 0 }
+@media (max-width:820px) { .tb { grid-template-columns:1fr; padding:26px 22px; gap:22px } }

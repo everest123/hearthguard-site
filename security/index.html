@@ -43,11 +43,29 @@
   <h1>Powerful agents. Firm boundaries.</h1>
   <p class="lead">Your agents do real work on real systems. My Maestro AI makes sure they do only the work you allow, on hardware you own, and tells you the moment anything needs attention.</p>
   <div class="index">
-    <a href="#data" style="--c:var(--aqua)">Your data</a><a href="#actions" style="--c:var(--orange)">Every action checked</a><a href="#contained" style="--c:var(--violet)">Contained</a><a href="#watch" style="--c:var(--gold)">Self-checking</a><a href="#releases" style="--c:var(--rose)">Security releases</a><a href="#license" style="--c:var(--blue)">License</a>
+    <a href="#trust" style="--c:var(--blue)">What you're trusting</a><a href="#data" style="--c:var(--aqua)">Your data</a><a href="#actions" style="--c:var(--orange)">Every action checked</a><a href="#contained" style="--c:var(--violet)">Contained</a><a href="#watch" style="--c:var(--gold)">Self-checking</a><a href="#releases" style="--c:var(--rose)">Security releases</a><a href="#license" style="--c:var(--blue)">License</a>
   </div>
 </div></div>
 
 <div class="wrap">
+  <div class="group" id="trust" style="--c:var(--blue)"><h2><span></span>What you're trusting</h2>
+    <p class="gintro">My Maestro AI is built to keep agents within the limits you set. Still, a team of agents with real access depends on many moving parts, and each one is part of your security. This is what you're trusting when you run it.</p>
+    <div class="grid">
+      <div class="card" style="--c:var(--blue)"><h4>This computer</h4><p>Your Maestro runs on your computer and listens only there, unless you turn on remote access, which needs two-factor. Keeping it safe also depends on that computer: its updates, passwords and disk encryption, and who else can use it. Agents that run directly on the computer can do what its user account can do; others run in a container that sees only the folders you grant.</p></div>
+      <div class="card" style="--c:var(--blue)"><h4>Your AI models</h4><p>A cloud model (Claude, GPT, Gemini and others) receives what an agent sends it: your messages, the conversation so far, the files and pages it works on, and tool results. The provider handles them under its own terms. A model running on your computer processes requests there, though tools and connected accounts can still send information out.</p></div>
+      <div class="card" style="--c:var(--blue)"><h4>What you connect</h4><p>Email, calendars, chat apps, wallets and other accounts give agents more reach. Each connection is another path for information to come in or go out, and an agent can act through it.</p></div>
+      <div class="card" style="--c:var(--blue)"><h4>What agents read</h4><p>Web pages, emails and documents can hide instructions meant to steer an agent. Agents are told to treat what they read as information, and your Maestro checks the actions they take, but agents can still be misled and no check catches everything.</p></div>
+      <div class="card" style="--c:var(--blue)"><h4>The software</h4><p>My Maestro AI gets security reviews and fixes, but like any software it can still have flaws. Fixes arrive as updates that you choose to install. From version 5.7.0, your Maestro tells you when an update is ready and marks the ones that fix security problems.</p></div>
+      <div class="card rec-card" style="--c:var(--gold)"><h4>How we recommend using it</h4><ul>
+        <li>For you and people you trust: give accounts only to people you'd trust with the computer itself.</li>
+        <li>With agents you trust, each with only the folders, accounts and tools it needs.</li>
+        <li>Without anything you wouldn't be comfortable having shared with a third party or exposed in a breach.</li>
+        <li>With backups of what matters, approval cards on for the actions you want to check first, and limits on anything that spends money: agents can make mistakes even when nobody is attacking them.</li>
+        <li>Kept up to date, with two-factor on, and reached from other devices only through Tailscale.</li></ul></div>
+    </div>
+    <p class="fine">My Maestro AI is provided as is, without warranty. See the <a href="#license">license</a>.</p>
+  </div>
+
   <div class="group" id="data" style="--c:var(--aqua)"><h2><span></span>Your data stays home</h2>
     <div class="two even">
       <p class="gintro">Conversations, memories, records and files live on your own machine, in plain files and SQLite you can read and back up yourself. Processing follows the model you choose: a hosted model sees the turns it handles, under its provider's terms, and a local model sends nothing off the machine. Agents that handle sensitive matters can be kept on local models.</p>
