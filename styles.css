@@ -122,11 +122,11 @@ footer { padding:36px 0 48px; color:var(--dim); font-size:14px } footer .wrap { 
 .hero .wrap > div { min-width:0 }
 
 /* Security notice bar (Node.js security releases of November 11, 2026), with the <aside class="notice"> on every page */
-.notice { background:linear-gradient(90deg, rgba(201,162,39,.16), rgba(201,162,39,.08)); border-bottom:1px solid rgba(201,162,39,.4); font-size:14px }
-.notice .wrap { padding-top:10px; padding-bottom:10px }
-.notice p { margin:0; line-height:1.5; color:var(--text) }
-.notice b { color:var(--gold); font-weight:600 }
-.notice a { font-weight:600; white-space:nowrap }
+.notice { font-size:15px }
+.notice .wrap { padding-top:14px; padding-bottom:14px }
+.notice p { margin:0; line-height:1.5; color:#1a1a19; background:#facc15; border:1px solid #eab308; border-radius:10px; padding:12px 18px; box-shadow:0 4px 18px rgba(250,204,21,.22) }
+.notice b { color:#1a1a19; font-weight:700 }
+.notice a { color:#1a1a19; font-weight:700; white-space:nowrap; text-decoration:underline; text-underline-offset:2px }
 .steps.s2 { grid-template-columns:repeat(2, 1fr) }
 @media (max-width:560px) { .steps.s2 { grid-template-columns:1fr } }
 
