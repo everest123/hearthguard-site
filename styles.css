@@ -146,3 +146,18 @@ footer { padding:36px 0 48px; color:var(--dim); font-size:14px } footer .wrap { 
 /* Urgent security notice (red): an update people should install now */
 .notice.urgent p { color:#ffffff; background:#c81e1e; border-color:#991b1b; box-shadow:0 4px 18px rgba(200,30,30,.32) }
 .notice.urgent b, .notice.urgent a { color:#ffffff }
+
+/* What's new */
+.newstrip { padding:40px 0 0 }
+.ns { background:var(--bg2); border:1px solid var(--line); border-radius:14px; padding:22px 28px 24px; position:relative; overflow:hidden }
+.ns::before { content:""; position:absolute; inset:0 0 auto 0; height:3px; background:var(--gold) }
+.ns-head { display:flex; justify-content:space-between; align-items:baseline; gap:16px; flex-wrap:wrap; margin-bottom:14px }
+.ns-head .eyebrow { margin:0 }
+.ns-head .more { font-weight:600; font-size:15px }
+.ns-list { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(4, 1fr); gap:14px }
+.ns-list li { background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:12px 14px; color:var(--dim); font-size:14px; line-height:1.5 }
+.ns-list b { display:block; color:var(--text); font-weight:600 }
+@media (max-width:900px) { .ns-list { grid-template-columns:1fr 1fr } }
+@media (max-width:560px) { .ns-list { grid-template-columns:1fr } .ns { padding:20px 18px } }
+
+.pill.pill-new { border-color: var(--gold, #c9a227); color: var(--gold, #c9a227); }
