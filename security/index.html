@@ -15,48 +15,46 @@
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="My Maestro AI. Forget agents. Meet the team that works for you.">
+<meta property="og:image:alt" content="My Maestro AI: a team of AI agents with lasting memory, running on your own computer.">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Security · My Maestro AI">
 <meta name="twitter:description" content="My Maestro AI keeps your agents' memories on your own machine, checks every action against your policy, contains agents in sandboxes, and reviews its own security every night.">
 <meta name="twitter:image" content="https://www.mymaestroai.ai/og-image.png">
-<meta name="twitter:image:alt" content="My Maestro AI. Forget agents. Meet the team that works for you.">
-<meta name="theme-color" content="#1a1a19">
+<meta name="twitter:image:alt" content="My Maestro AI: a team of AI agents with lasting memory, running on your own computer.">
+<meta name="theme-color" content="#F6F1E7">
 <link rel="apple-touch-icon" href="/hub-192.png">
 <link rel="icon" href="/hub-192.png">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-<!-- security-notice:start (5.9.1; take down after 2026-11-25) -->
-<aside class="notice urgent" aria-label="Security update"><div class="wrap"><p><span aria-hidden="true">🔒 </span><b>Upgrade now:</b> My Maestro AI 5.9.1 is out with the Node.js security fixes of November 11, the most serious rated high. Update your Maestro, then its Node.js. <a href="/start/#update">How to update&nbsp;→</a></p></div></aside>
-<!-- security-notice:end -->
-<header><div class="wrap">
-  <a class="brand" href="/"><img src="/hub-192.png" alt="">My Maestro AI</a>
-  <nav aria-label="Main"><a href="/agents/">Your team</a><a href="/platform/">Platform</a><a href="/security/" aria-current="page">Security</a><a href="/whats-new/">What's new</a><a class="nav-cta" href="/start/">Get started</a></nav>
+<header class="masthead"><div class="wrap">
+  <div class="masthead-meta"><span>For Mac and Linux computers · Free for personal use</span><a href="https://github.com/mymaestroai/mymaestroai">The code on GitHub</a></div>
+  <div class="masthead-bar">
+    <a class="brand" href="/">My Maestro AI</a>
+    <nav class="site-nav" aria-label="Main"><a href="/agents/">Your team</a><a href="/platform/">Platform</a><a href="/security/" aria-current="page">Security</a><a href="/whats-new/">What's new</a><a class="nav-cta" href="/start/">Get started</a></nav>
+  </div>
+  <div class="masthead-rule"></div>
 </div></header>
 
 <div class="page-hero"><div class="wrap">
-  <p class="eyebrow">Security</p>
-  <h1>Powerful agents. Firm boundaries.</h1>
+  <h1>Security</h1>
   <p class="lead">Your agents do real work on real systems. My Maestro AI is built to keep them to the work you allow, on hardware you own, and to tell you when something needs your attention.</p>
   <div class="index">
-    <a href="#overview" style="--c:var(--blue)">Security overview</a><a href="#data" style="--c:var(--aqua)">Your data</a><a href="#actions" style="--c:var(--orange)">Every action checked</a><a href="#contained" style="--c:var(--violet)">Contained</a><a href="#watch" style="--c:var(--gold)">Self-checking</a><a href="#releases" style="--c:var(--rose)">Security releases</a><a href="#license" style="--c:var(--blue)">License</a>
+    <a href="#overview">Security overview</a><a href="#data">Your data</a><a href="#actions">Every action checked</a><a href="#contained">Contained</a><a href="#watch">Self-checking</a><a href="#releases">Security releases</a><a href="#license">License</a>
   </div>
 </div></div>
 
 <div class="wrap">
-  <div class="group" id="overview" style="--c:var(--blue)"><h2><span></span>Security overview</h2>
+  <div class="group" id="overview"><h2>Security overview</h2>
     <p class="gintro">My Maestro AI is built to keep agents within the limits you set. Still, a team of agents with real access depends on many moving parts, and each one is part of your security. Here is each of them, and how we recommend using your Maestro.</p>
     <div class="grid">
-      <div class="card" style="--c:var(--blue)"><h4>Your host computer</h4><p>Your Maestro runs on your computer and listens only there, unless you turn on remote access, which needs two-factor. Keeping it safe also depends on that computer: its updates, passwords and disk encryption, and who else can use it. Agents that run directly on the computer can do what its user account can do; others run in a container that sees only the folders you grant.</p></div>
-      <div class="card" style="--c:var(--blue)"><h4>Your AI models</h4><p>A cloud model (Claude, GPT, Gemini and others) receives what an agent sends it: your messages, the conversation so far, the files and pages it works on, and tool results. The provider handles them under its own terms. A model running on your computer processes requests there, though tools and connected accounts can still send information out.</p></div>
-      <div class="card" style="--c:var(--blue)"><h4>What you connect</h4><p>Email, calendars, chat apps, wallets and other accounts give agents more reach. Each connection is another path for information to come in or go out, and an agent can act through it.</p></div>
-      <div class="card" style="--c:var(--blue)"><h4>What agents read</h4><p>Web pages, emails and documents can hide instructions meant to steer an agent. Agents are told to treat what they read as information, and your Maestro checks the actions they take, but agents can still be misled and no check catches everything.</p></div>
-      <div class="card" style="--c:var(--blue)"><h4>The software</h4><p>My Maestro AI gets security reviews and fixes, but like any software it can still have flaws. Fixes arrive as updates that you choose to install. From version 5.7.0, your Maestro tells you when an update is ready and marks the ones that fix security problems.</p></div>
-      <div class="card rec-card" style="--c:var(--gold)"><h4>How we recommend using it</h4><ul>
+      <div class="card"><h4>Your host computer</h4><p>Your Maestro runs on your computer and listens only there, unless you turn on remote access, which needs two-factor. Keeping it safe also depends on that computer: its updates, passwords and disk encryption, and who else can use it. Agents that run directly on the computer can do what its user account can do; others run in a container that sees only the folders you grant.</p></div>
+      <div class="card"><h4>Your AI models</h4><p>A cloud model (Claude, GPT, Gemini and others) receives what an agent sends it: your messages, the conversation so far, the files and pages it works on, and tool results. The provider handles them under its own terms. A model running on your computer processes requests there, though tools and connected accounts can still send information out.</p></div>
+      <div class="card"><h4>What you connect</h4><p>Email, calendars, chat apps, wallets and other accounts give agents more reach. Each connection is another path for information to come in or go out, and an agent can act through it.</p></div>
+      <div class="card"><h4>What agents read</h4><p>Web pages, emails and documents can hide instructions meant to steer an agent. Agents are told to treat what they read as information, and your Maestro checks the actions they take, but agents can still be misled and no check catches everything.</p></div>
+      <div class="card"><h4>The software</h4><p>My Maestro AI gets security reviews and fixes, but like any software it can still have flaws. Fixes arrive as updates that you choose to install. From version 5.7.0, your Maestro tells you when an update is ready and marks the ones that fix security problems.</p></div>
+      <div class="card rec-card"><h4>How we recommend using it</h4><ul>
         <li>For you and people you trust: give accounts only to people you'd trust with the computer itself.</li>
         <li>With agents you trust, each with only the folders, accounts and tools it needs.</li>
         <li>Without anything you wouldn't be comfortable having shared with a third party or exposed in a breach.</li>
@@ -66,7 +64,7 @@
     <p class="fine">My Maestro AI is provided as is, without warranty. See the <a href="#license">license</a>.</p>
   </div>
 
-  <div class="group" id="data" style="--c:var(--aqua)"><h2><span></span>Your data stays home</h2>
+  <div class="group" id="data"><h2>Your data stays home</h2>
     <div class="two even">
       <p class="gintro">Conversations, memories, records and files live on your own machine, in plain files and SQLite you can read and back up yourself. Processing follows the model you choose: a hosted model sees the turns it handles, under its provider's terms, and a local model sends nothing off the machine. Agents that handle sensitive matters can be kept on local models.</p>
       <ul class="check">
@@ -77,42 +75,42 @@
     </div>
   </div>
 
-  <div class="group" id="actions" style="--c:var(--orange)"><h2><span></span>Every action checked</h2>
+  <div class="group" id="actions"><h2>Every action checked</h2>
     <p class="gintro">Agents act through tools, and your Maestro checks their tool calls against a policy you set before they run.</p>
     <div class="grid g4">
-      <div class="card" style="--c:var(--orange)"><h4>A policy gate on every action</h4><p>Each tool call is classified as a read, a write, a send, an administrative, destructive or money action, and checked against the agent's role and your overrides. One switch halts every agent at once.</p></div>
-      <div class="card" style="--c:var(--orange)"><h4>Approval when you want it</h4><p>Choose which kinds of action always wait for you, such as destructive actions or actions that spend money, and approve them from a card on your desktop or phone.</p></div>
-      <div class="card" style="--c:var(--orange)"><h4>Root, by your hand only</h4><p>Administrator rights on the machine are reserved for the lead agent, unless you lend another agent root for a set time. Your Maestro logs the root commands it sees. For added protection, don't let the computer account your Maestro runs under use administrator rights without a password (password-free sudo).</p></div>
-      <div class="card" style="--c:var(--orange)"><h4>Money behind a firewall</h4><p>Trading wallets are built to sign only within the limits and the address book you set, and money actions can be set to wait for your approval.</p></div>
+      <div class="card"><h4>A policy gate on every action</h4><p>Each tool call is classified as a read, a write, a send, an administrative, destructive or money action, and checked against the agent's role and your overrides. One switch halts every agent at once.</p></div>
+      <div class="card"><h4>Approval when you want it</h4><p>Choose which kinds of action always wait for you, such as destructive actions or actions that spend money, and approve them from a card on your desktop or phone.</p></div>
+      <div class="card"><h4>Root, by your hand only</h4><p>Administrator rights on the machine are reserved for the lead agent, unless you lend another agent root for a set time. Your Maestro logs the root commands it sees. For added protection, don't let the computer account your Maestro runs under use administrator rights without a password (password-free sudo).</p></div>
+      <div class="card"><h4>Money behind a firewall</h4><p>Trading wallets are built to sign only within the limits and the address book you set, and money actions can be set to wait for your approval.</p></div>
     </div>
   </div>
 
-  <div class="group" id="contained" style="--c:var(--violet)"><h2><span></span>Contained by design</h2>
+  <div class="group" id="contained"><h2>Contained by design</h2>
     <p class="gintro">Each agent can be limited to what it needs.</p>
     <div class="grid g4">
-      <div class="card" style="--c:var(--violet)"><h4>Sandboxed agents</h4><p>An agent's shell can run inside its own container, which mounts only its workspace and the folders you grant, and its file tools check where symbolic links lead before following them.</p></div>
-      <div class="card" style="--c:var(--violet)"><h4>Private family members</h4><p>Members' agents run in containers, with access controls designed to keep each member's agents and files apart, and members get only the permissions you grant them. Sharing an agent with a member lets them use and change it and see its files, so share only with members you trust.</p></div>
-      <div class="card" style="--c:var(--violet)"><h4>Scoped tokens for scripts</h4><p>A script gets a token scoped to what it needs, usable only from your Maestro's own computer unless you allow more, with an expiry you can set and one-click revoke.</p></div>
-      <div class="card" style="--c:var(--violet)"><h4>Two-factor sign-in</h4><p>Accounts sign in with a password and an authenticator code, and the security check flags any account that has not set it up.</p></div>
+      <div class="card"><h4>Sandboxed agents</h4><p>An agent's shell can run inside its own container, which mounts only its workspace and the folders you grant, and its file tools check where symbolic links lead before following them.</p></div>
+      <div class="card"><h4>Private family members</h4><p>Members' agents run in containers, with access controls designed to keep each member's agents and files apart, and members get only the permissions you grant them. Sharing an agent with a member lets them use and change it and see its files, so share only with members you trust.</p></div>
+      <div class="card"><h4>Scoped tokens for scripts</h4><p>A script gets a token scoped to what it needs, usable only from your Maestro's own computer unless you allow more, with an expiry you can set and one-click revoke.</p></div>
+      <div class="card"><h4>Two-factor sign-in</h4><p>Accounts sign in with a password and an authenticator code, and the security check flags any account that has not set it up.</p></div>
     </div>
   </div>
 
-  <div class="group" id="watch" style="--c:var(--gold)"><h2><span></span>It watches itself</h2>
+  <div class="group" id="watch"><h2>It watches itself</h2>
     <p class="gintro">Security is not a setting you choose once. Your Maestro checks itself every day.</p>
     <div class="grid g2">
-      <div class="card" style="--c:var(--gold)"><h4>A nightly security check</h4><p>Every night your Maestro reviews its accounts and two-factor, network exposure, file permissions, agent permissions, tokens and open services, and tells you what to fix. It runs from a terminal too, even when your Maestro is down.</p></div>
-      <div class="card" style="--c:var(--gold)"><h4>A record of everything</h4><p>Every turn is kept in the transcript, every root command and permission change is logged, and every turn is costed in the ledger. You can always see who did what, and when.</p></div>
+      <div class="card"><h4>A nightly security check</h4><p>Every night your Maestro reviews its accounts and two-factor, network exposure, file permissions, agent permissions, tokens and open services, and tells you what to fix. It runs from a terminal too, even when your Maestro is down.</p></div>
+      <div class="card"><h4>A record of everything</h4><p>Every turn is kept in the transcript, every root command and permission change is logged, and every turn is costed in the ledger. You can always see who did what, and when.</p></div>
     </div>
   </div>
 
-  <div class="group" id="releases" style="--c:var(--rose)"><h2><span></span>Security releases</h2>
+  <div class="group" id="releases"><h2>Security releases</h2>
     <p class="gintro">Releases that fix a security issue, newest first.</p>
-    <div class="card" style="--c:var(--rose)"><h4>5.9.1 · November 11, 2026</h4><p>Node.js released security fixes, the most serious rated high (<a href="https://nodejs.org/en/blog/vulnerability/november-2026-security-releases">Node.js security releases</a>). New installs get Node.js 22.23.5. The security check now flags a Maestro whose Node.js is missing those fixes and shows the fix for that install. <a href="/start/#update">How to update</a>.</p></div>
-    <div class="card" style="--c:var(--rose)"><h4>5.5.1 · October 21, 2026</h4><p>Node.js fixed high-severity security issues (<a href="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases">Node.js security releases</a>). New installs get Node.js 22.23.4. The security check now flags a Maestro whose Node.js is missing those fixes and shows the fix for that install. <a href="/start/#update">How to update</a>.</p></div>
+    <div class="card"><h4>5.9.1 · November 11, 2026</h4><p>Node.js released security fixes, the most serious rated high (<a href="https://nodejs.org/en/blog/vulnerability/november-2026-security-releases">Node.js security releases</a>). New installs get Node.js 22.23.5. The security check now flags a Maestro whose Node.js is missing those fixes and shows the fix for that install. <a href="/start/#update">How to update</a>.</p></div>
+    <div class="card"><h4>5.5.1 · October 21, 2026</h4><p>Node.js fixed high-severity security issues (<a href="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases">Node.js security releases</a>). New installs get Node.js 22.23.4. The security check now flags a Maestro whose Node.js is missing those fixes and shows the fix for that install. <a href="/start/#update">How to update</a>.</p></div>
   </div>
 
-  <div class="group" id="license" style="--c:var(--blue)"><h2><span></span>License</h2>
-    <div class="card" style="--c:var(--blue)">
+  <div class="group" id="license"><h2>License</h2>
+    <div class="card">
       <p>My Maestro AI is source-available under the PolyForm Noncommercial license. Personal, research and self-hosted non-commercial use is free. Commercial deployment, including use on behalf of clients, is available under a separate commercial license. <a href="mailto:jeff@lunglhofer.com">Ask about commercial licensing</a>.</p>
     </div>
   </div>
@@ -120,7 +118,7 @@
   <div class="next"><div><strong>Ready to build your team?</strong><p>One computer and an AI provider of your choice is all it takes.</p></div><a class="cta" href="/start/">Get started</a></div>
 </div>
 
-<footer class="divider"><div class="wrap">
+<footer><div class="wrap">
   <div>© 2026 Jeff Lunglhofer · My Maestro AI</div>
   <div><a href="/agents/">Your team</a> · <a href="/platform/">Platform</a> · <a href="/security/">Security</a> · <a href="/whats-new/">What's new</a> · <a href="/start/">Get started</a> · <a href="mailto:jeff@lunglhofer.com">Contact</a></div>
 </div></footer>
