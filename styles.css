@@ -115,7 +115,6 @@ footer a { color:var(--muted) } footer a:hover { color:var(--ink) }
 .lead-copy { padding-right:38px; border-right:1px solid var(--rule) }
 .lead-copy h1 { font-size:clamp(32px, 4.1vw, 48px); line-height:1.13; letter-spacing:-0.02em; margin:0 0 20px }
 .lead-prose { font-size:18.5px; line-height:1.62; margin:0 0 22px }
-.features-line { font:14px/1.6 var(--sans); color:var(--muted); border-top:1px solid var(--rule); padding-top:10px; margin:6px 0 0 }
 .install-sheet { background:var(--sheet); border:1px solid var(--ink); padding:20px 22px; box-shadow:4px 4px 0 var(--ochre); margin:12px 0 20px }
 .install-sheet h2 { font-size:20px; margin:0 0 6px }
 .install-sheet .cmd-cap { margin:0 0 10px }
