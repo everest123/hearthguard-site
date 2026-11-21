@@ -68,6 +68,10 @@ p.lead { font-size:19px; line-height:1.62; margin:0 0 22px; max-width:64ch }
 .rec-card ul { margin:8px 0 0 20px; padding:0; color:var(--ink); font-size:16px } .rec-card li { margin:6px 0 }
 .fine { font:13.5px/1.5 var(--sans); color:var(--muted); margin:16px 0 0 }
 
+.also-title { font-size:18px; margin:14px 0 6px }
+ul.also { margin:0; padding-left:20px; color:var(--muted); font-size:16px; line-height:1.55; max-width:78ch }
+ul.also li { margin:4px 0 }
+
 /* Two columns */
 .two { display:grid; grid-template-columns:1.1fr .9fr; gap:48px; align-items:start }
 .two.even { grid-template-columns:1fr 1fr }
@@ -142,6 +146,8 @@ footer a { color:var(--muted) } footer a:hover { color:var(--ink) }
 .cols > .col:first-child, .cols.c3 > .col:nth-child(3n+1), .cols.c2 > .col:nth-child(2n+1) { padding-left:0 }
 .cols.c3 > .col:nth-child(3n), .cols.c2 > .col:nth-child(2n), .cols.c4 > .col:nth-child(4n) { border-right:0; padding-right:0 }
 .cols.c3 > .col:nth-child(-n+3):nth-last-child(n+4) { border-bottom:1px solid var(--rule); margin-bottom:14px }
+.cols.c4 > .col:nth-child(4n+1) { padding-left:0 }
+.cols.c4 > .col:nth-child(-n+4):nth-last-child(n+5) { border-bottom:1px solid var(--rule); margin-bottom:14px }
 .cols.c2.ruled > .col:nth-child(-n+2):nth-last-child(n+3) { border-bottom:1px solid var(--rule); margin-bottom:14px }
 .col h3 { font-size:19.5px; line-height:1.3; margin:0 0 6px }
 .col p { margin:0; color:var(--muted); font-size:16px; line-height:1.55 }
